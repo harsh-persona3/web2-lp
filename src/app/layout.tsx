@@ -1,8 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const proximaNova = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ProximaNova/proximanova_light.otf",
+      weight: "300"
+    },
+    {
+      path: "../../public/fonts/ProximaNova/proximanova_regular.ttf",
+      weight: "400"
+    },
+    {
+      path: "../../public/fonts/ProximaNova/proximanova_bold.otf",
+      weight: "700"
+    },
+    {
+      path: "../../public/fonts/ProximaNova/proximanova_extrabold.otf",
+      weight: "800"
+    },
+    {
+      path: "../../public/fonts/ProximaNova/proximanova_black.otf",
+      weight: "900"
+    }
+  ],
+  variable: '--font-proxima-nova'
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${proximaNova.className} antialiased`}>{children}</body>
     </html>
   );
 }
