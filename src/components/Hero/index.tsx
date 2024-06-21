@@ -11,21 +11,23 @@ export default function Hero(props: HeroProps) {
     <div {...rest} className={twMerge("", className)}>
       <div className="relative z-10 mx-auto h-[50vw] overflow-hidden">
         <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.04)" />
-        <div className="absolute z-20 text-center top-[10%] left-[10%] right-[10%] bottom-[10%]">
+        <div className="absolute z-10 text-center top-[10%] left-[10%] right-[10%] bottom-[10%] pointer-events-none">
           <div className="flex flex-wrap-reverse items-center justify-around mx-auto h-full w-full">
             <div className="w-1/2 flex flex-col">
               <div className="relative w-fit">
-                <p className={`text-left uppercase font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-[#ACF0F2] inline-block text-transparent bg-clip-text ${styles.textStroke}`}>World’s only</p>
+                <p
+                  className={`text-left uppercase font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-[#ACF0F2] inline-block text-transparent bg-clip-text ${styles.textStroke}`}
+                >
+                  World’s only
+                </p>
               </div>
               <div className="relative w-fit">
-                <p
-                  className={`text-left font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-pre-wrap`}
-                >
+                <p className={`text-left font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-pre-wrap`}>
                   sponsored checkout experience
                 </p>
 
                 <div className="w-fit mt-3">
-                  <button className="capitalize">Book a demo</button>
+                  <button className="capitalize pointer-events-auto">Book a demo</button>
                 </div>
                 {/* <div className="absolute z-10 -left-32 -top-32">
                   <svg width="801" height="562" viewBox="0 0 801 562" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,10 +46,12 @@ export default function Hero(props: HeroProps) {
                 </div> */}
               </div>
             </div>
-            <div className="w-[30vw] aspect-square bg-gray-300 rounded-3xl"></div>
+            <div className="w-[30vw] aspect-square bg-white rounded-3xl shadow-black pointer-events-auto">
+              <button></button>
+            </div>
           </div>
         </div>
-        <div className="absolute -z-10 w-[40vw] aspect-square blur-3xl left-48 bg-gradient-to-t from-cyan-500 to-blue-500 rounded-full opacity-10 shadow-inner top-1/2 -translate-x-1/2"></div>
+        <div className="absolute -z-20 w-[40vw] aspect-square blur-3xl left-48 bg-gradient-to-t from-cyan-500 to-blue-500 rounded-full opacity-10 shadow-inner top-1/2 -translate-x-1/2"></div>
       </div>
     </div>
   );
