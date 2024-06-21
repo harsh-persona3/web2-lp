@@ -4,8 +4,8 @@ import Hero from "@/components/Hero";
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Footer className="mx-auto w-[80%]"/>
+      <Hero className="bg-[#FFF3E9]"/>
+      <Footer className="bg-[#FFF3E9] py-32"/>
     </main>
   );
 }

@@ -31,7 +31,7 @@ const proximaNova = localFont({
 const agrandir = localFont({
   src: [
     {
-      path: "../../public/fonts/Agrandir/Agrandir Grand Light 300.otf",
+      path: "../../public/fonts/Agrandir/Agrandir Wide Light 300.otf",
       weight: "300"
     },
     {
