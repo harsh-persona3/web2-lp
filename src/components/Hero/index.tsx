@@ -9,7 +9,7 @@ export default function Hero(props: HeroProps) {
   return (
     <div {...rest} className={twMerge("", className)}>
       <div className="relative z-10 mx-auto h-screen overflow-hidden">
-        <AnimatedGrid squareSize={200} gridColor="rgba(255, 255, 255, 0.09)" />
+        <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.09)" />
         <div className="absolute z-20 text-center top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
           <div className="relative w-fit">
             <div className="absolute z-10 -left-96">

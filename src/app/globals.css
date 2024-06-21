@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 
-body {
+html, body {
   height: 100vh;
   overflow: auto;
   overflow-x: hidden;
-  background: rgba(0, 0, 0, 1);
-  color: white;
+  background: rgba(255, 255, 255, 1);
+  color: black;
+  font-family: var(--font-proxima-nova);
+
 }
