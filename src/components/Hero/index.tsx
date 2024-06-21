@@ -17,7 +17,7 @@ export default function Hero(props: HeroProps) {
                 <path
                   d="M0.755252 150.24C25.9028 49.4085 93.656 -100.34 163.488 107.32C205.128 203.486 231.622 192.29 288.844 113.977C313.023 80.8864 342.226 36.6051 398.905 63.6765"
                   stroke="url(#paint0_linear_44_7)"
-                  stroke-width="5.2952"
+                  strokeWidth="5.2952"
                 />
                 <defs>
                   <linearGradient id="paint0_linear_44_7" x1="370.416" y1="100.548" x2="15.9761" y2="185.4" gradientUnits="userSpaceOnUse">
@@ -44,11 +44,11 @@ export default function Hero(props: HeroProps) {
                 <path
                   d="M0.11164 499.432C21.7682 500.373 67.2839 513.26 76.094 557.277C73.1693 567.398 85.0622 535.943 114.822 495.695C161.182 432.996 265.559 341.073 312.188 474.972C398.727 291.629 575.573 -16.3484 590.641 218.488C627.045 156.899 750.041 9.74417 797.371 17.0415M797.371 17.0415L762.259 100.603C766.678 74.9639 797.371 17.0415 797.371 17.0415ZM797.371 17.0415C796.868 9.58543 776.991 -2.80443 701.512 7.28437"
                   stroke="url(#paint0_linear_44_4)"
-                  stroke-width="5.2952"
+                  strokeWidth="5.2952"
                 />
                 <defs>
                   <linearGradient id="paint0_linear_44_4" x1="907.5" y1="-28" x2="248.939" y2="411.409" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#C071FF" />
+                    <stop stopColor="#C071FF" />
                     <stop offset="1" stopColor="#E5E187" stopOpacity="0" />
                   </linearGradient>
                 </defs>
