@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-proxima-nova)"],
+        agrandir: ["var(--font-agrandir)"]
       },
     },
   },
