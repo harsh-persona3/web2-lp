@@ -6,10 +6,10 @@ import Hero from "@/components/Hero";
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      <Hero className="bg-[#FFF3E9]" />
       <BrandsAndInfo />
       <BackedBy />
-      {/* <Footer className="mx-auto w-[80%]"/> */}
+      <Footer className="bg-[#FFF3E9] py-32" />
     </main>
   );
 }
