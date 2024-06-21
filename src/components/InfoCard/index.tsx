@@ -1,29 +1,37 @@
 "use client";
 import { HTMLAttributes } from "react";
 
-interface InfoCardProps extends HTMLAttributes<HTMLDivElement> {}
+interface InfoCardProps extends HTMLAttributes<HTMLDivElement> {
+  title: string;
+  info: string;
+  description: string;
+  reverse: boolean;
+  color: string;
+}
 
 export default function InfoCard(props: InfoCardProps) {
-  const { ...rest } = props;
+  const { title, info, description, reverse, color } = props;
 
-  const config = {
-    title: 'For publishers',
-    info: 'Grow lifetime revenue at zero cost \n  through Persona’s checkout flywheel!!!',
-    description: 'Subsidize your user’s checkout all sponsored by Persona’s \n advertising partners.'
-  }
+  console.log(reverse);
 
   return (
-    <div {...rest} className={`flex flex-row-reverse justify-between items-center gap-20 px-10 py-10 w-full`}>
-      <img src={getPublicAssetUrl('/logos/logo-word-dark-bg.png')} width={430} height={470} />
-      <div className="flex flex-col gap-5 max-w-[600px]">
-        <h1 className="text-4xl text-lime-200 font-bold">{config.title}</h1>
-        <h1 className="text-4xl">{config.info}</h1>
-        <p className="text-3xl text-white">{config.description}</p>
+    <div className={`flex ${reverse? 'flex-row-reverse':'flex-row'} flex-wrap${reverse? '':''} items-center justify-center gap-10 md:gap-20 py-10"`}>
+      <div className="flex min-w-[300px] w-2/5 items-center justify-center lg:justify-start">
+        <img src={'/images/info-growth.png'} className="w-4/5" />
+      </div>
+      <div className="flex flex-col text-center lg:text-left items-center lg:items-start gap-5 max-w-[400px]">
+        <div className="max-w-[fit-content] flex-none border border-black z-10">
+          <div className={`max-w-[fit-content] py-2 px-4 ${color} bg-opacity-60 transition-transform transform translate-y-[6px] translate-x-[6px]`}>
+            <p className="text-lg md:text-xl lg:text-2xl">{title}</p>
+          </div>
+        </div>
+        <p className="text-2xl md:text-3xl lg:text-3xl font-bold leading-2">
+          {info}
+        </p>
+        <p className="text-lg md:text-lg lg:text-xl leading-normal">
+          {description}
+        </p>
       </div>
     </div>
   );
 }
-
-export const getPublicAssetUrl = (assetPath: string) => {
-    return `https://cdn.persona3.tech/assets${assetPath}`;
-};
