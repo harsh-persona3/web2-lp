@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import styles from "./Footer.module.css";
+import CTAButton from "../CTA";
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Footer(props: FooterProps) {
@@ -9,14 +10,20 @@ export default function Footer(props: FooterProps) {
       <div className="mx-auto w-[80%]">
         <Card />
         <div className="my-32"></div>
-        <p className="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">We are changing advertising for the benefit of ALL</p>
+        <p className="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">We are changing advertising for the benefit of ALL</p>
         <p className="mt-5 text-center font-normal font-agrandir text-lg sm:text-xl md:text-2xl">
           At Persona, we are passionate about helping businesses achieve explosive growth through scalable and innovative financial incentives. Let us show you
           what sets us apart.
         </p>
-        <div className="flex gap-2 mx-auto w-fit">
-          <button>Get in touch</button>
-          <button>View demo</button>
+        <div className="flex gap-8 mx-auto w-fit mt-10">
+          <CTAButton
+            title={"Get in touch"}
+            classname={"capitalize pointer-events-auto font-semibold p-1 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl bg-[#CBC1FF]"}
+          ></CTAButton>
+          <CTAButton
+            title={"View demo"}
+            classname={"capitalize pointer-events-auto font-semibold p-1 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl bg-[#FFF3E9]"}
+          ></CTAButton>
         </div>
       </div>
     </div>
