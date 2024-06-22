@@ -1,20 +1,20 @@
 import BackedBy from "@/components/BackedBy";
 import BrandsAndInfo from "@/components/BrandsAndInfo";
 import Footer, { Card } from "@/components/Footer";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import RewardsCards from "@/components/RewardsCards";
+import Cursor from "@/components/ui/CustomCursor";
 
 export default function Home() {
   return (
     <main className="">
-      <Header />
+      <Cursor />
       <Hero />
       <BrandsAndInfo />
-      <RewardsCards />
+      {/* <RewardsCards /> */}
       <BackedBy />
       <Card />
-      <Footer className="mx-auto w-[80%]"/>
+      <Footer className="py-32" />
     </main>
   );
 }

@@ -15,7 +15,7 @@ export default function CTAButton(props: CTAButtonProps) {
   };
 
   const handlePointerUp = () => {
-    setIsButtonPressed(false);
+    setTimeout(() => setIsButtonPressed(false), 100);
   };
 
   return (

@@ -1,8 +1,7 @@
 import { HTMLAttributes } from "react";
 import AnimatedGrid from "../AnimatedGrid";
 import { twMerge } from "tailwind-merge";
-import styles from "./Hero.module.css";
-import CTAButton from "../CTA";
+import Image from "next/image";
 
 interface HeroProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -10,49 +9,61 @@ export default function Hero(props: HeroProps) {
   const { className, ...rest } = props;
   return (
     <div {...rest} className={twMerge("", className)}>
-      <div className="relative z-10 mx-auto h-[50vw] overflow-hidden">
-        <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.04)" />
-        <div className="absolute z-10 text-center top-[10%] left-[10%] right-[10%] bottom-[10%] pointer-events-none overflow-hidden p-4">
-          <div className="flex flex-wrap-reverse items-center gap-4 sm:justify-around mx-auto h-full w-full">
-            <div className="w-1/2 flex flex-col">
-              <div className="relative w-fit">
-                <p
-                  className={`text-left uppercase font-bold text-sm sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl bg-[#ACF0F2] inline-block text-transparent bg-clip-text ${styles.textStroke}`}
-                >
-                  World’s only
-                </p>
-              </div>
-              <div className="relative w-fit">
-                <p className={`text-left font-extrabold text-xs sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl whitespace-pre-wrap`}>
-                  sponsored checkout experience
-                </p>
+      <div className="relative z-10 mx-auto min-h-[50vw]">
+        <div className="w-full h-full absolute inset-0 -z-10">
+          <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.01)" />
+        </div>
+        <div className="absolute right-[20%] m-auto w-[20vw] aspect-square rounded-full bg-gradient-to-b from-[#8BFCFF] via-[#8BFCFF] to-[#8BFCFF] blur-[5vw] "></div>
+        <div className="absolute left-[15%] top-[50%] m-auto w-[30vw] aspect-square rounded-full bg-gradient-to-b from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] blur-[5vw] "></div>
 
-                <div className="w-fit mt-6">
-                  <CTAButton title={"Book a demo"} classname={"capitalize pointer-events-auto font-semibold px-3 py-1 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl bg-[#CBC1FF]"}></CTAButton>
-                </div>
-                {/* <div className="absolute z-10 -left-32 -top-32">
-                  <svg width="801" height="562" viewBox="0 0 801 562" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M0.11164 499.432C21.7682 500.373 67.2839 513.26 76.094 557.277C73.1693 567.398 85.0622 535.943 114.822 495.695C161.182 432.996 265.559 341.073 312.188 474.972C398.727 291.629 575.573 -16.3484 590.641 218.488C627.045 156.899 750.041 9.74417 797.371 17.0415M797.371 17.0415L762.259 100.603C766.678 74.9639 797.371 17.0415 797.371 17.0415ZM797.371 17.0415C796.868 9.58543 776.991 -2.80443 701.512 7.28437"
-                      stroke="url(#paint0_linear_44_4)"
-                      strokeWidth="5.2952"
-                    />
-                    <defs>
-                      <linearGradient id="paint0_linear_44_4" x1="907.5" y1="-28" x2="248.939" y2="411.409" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#C071FF" />
-                        <stop offset="1" stopColor="#E5E187" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div> */}
+        <div className="pointer-events-none flex sm:py-20 py-6 relative z-10 flex-wrap-reverse min-h-[50vw] justify-center items-center gap-8 sm:gap-0">
+          <div className="mx-auto w-1/2 flex-grow px-10 flex flex-col gap-8 justify-center sm:items-start items-center">
+            <h1 className="text-center sm:text-left font-bold text-4xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl ">
+              World&apos;s only sponsored checkout experience
+            </h1>
+            <div>
+              <button className="bg-black text-white font-bold sm:px-14 sm:py-5 py-3 px-8 rounded-xl text-base md:text-xl xl:text-3xl pointer-events-auto cursor-none">
+                Book a demo
+              </button>
+            </div>
+          </div>
+          <div className="w-[60%] sm:w-[50vw] aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
+            <Image
+              className="absolute -top-[13%] -left-[8.5%]"
+              src={"/images/cart.png"}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "10vw" }}
+              alt="cart"
+            />
+            <div className="absolute inset-0 overflow-hidden rounded-2xl">
+              <div className="w-full bg-[#D8D8D8] opacity-60 absolute top-[5%] py-1 -z-10">
+                <p className="text-xs sm:text-sm md:text-lg relative left-[15%]">https://www.yourshopping.com</p>
               </div>
             </div>
-            <div className="w-[30vw] aspect-square bg-white rounded-3xl shadow-black pointer-events-auto">
-              <button></button>
+            <Image
+              className="absolute bottom-[20%] left-[5%] sm:bottom-[10%]"
+              src={"/images/checkout-prev.png"}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "30vw" }}
+              alt="cart"
+            />
+            <div className="absolute bottom-[20%] right-[5%] sm:bottom-[8%] shadow-lg shadow-purple-400 outline rounded-lg md:rounded-[1.4vw] bg-white overflow-hidden">
+              <Image
+                className=" scale-100 overflow-hidden"
+                src={"/images/place-order.png"}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "25vw" }}
+                alt="palce order"
+              />
             </div>
           </div>
         </div>
-        <div className="absolute -z-20 w-[40vw] aspect-square blur-3xl left-48 bg-gradient-to-t from-cyan-500 to-blue-500 rounded-full opacity-10 shadow-inner top-1/2 -translate-x-1/2"></div>
       </div>
     </div>
   );

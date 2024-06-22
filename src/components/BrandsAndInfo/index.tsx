@@ -1,5 +1,4 @@
 import Brands from "../Brands";
-import InfoCard from "../InfoCard";
 
 const infoCards = [
     {
