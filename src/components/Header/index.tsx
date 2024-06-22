@@ -27,14 +27,13 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
       <div
         {...rest}
-        className={`fixed top-0 flex justify-between items-center px-10 py-5 z-[99999] w-full ${
+        className={`fixed top-0 flex justify-between items-center px-10 py-5 2xl:py-6 z-[99999] w-full ${
           scrollAtTop
-            ? "bg-white/80 backdrop-blur-md shadow-lg border-b border-white/10 rounded-b-xl"
+            ? "bg-white/80 backdrop-blur-md shadow-lg border-b border-white/10 rounded-md md:rounded-b-xl"
             : ""
         }`}
       >
-        {/* <img src="/images/persona.png" width={140} height={140} /> */}
-        <div className="w-[120px] sm:w-[140px]">
+        <div className="w-[120px] sm:w-[140px] 2xl:w-[198px]">
           <Image
               className=""
               src={'/images/persona.png'}
@@ -45,7 +44,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               alt="reward"
           />
         </div>
-        <div className="items-center text-md gap-8 hidden sm:flex">
+        <div className="items-center text-md 2xl:text-xl gap-8 hidden sm:flex">
           <a href="https://www.persona3.io/#advertisers" target="_blank" className="cursor-none">
             <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-pink-500 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
               ADVERTISERS
@@ -58,7 +57,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           </a>
           <a href="https://calendly.com/evanevraj/persona3-io?month=2024-06" target="_blank" className="cursor-none">
             <button
-              className="relative px-4 py-2 text-sm text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] cursor-none"
+              className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] cursor-none"
               style={{ border: "1px solid #6F6477" }}
             >
               <p>GET STARTED</p>

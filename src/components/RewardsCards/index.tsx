@@ -6,7 +6,7 @@ const cardsConfig = [
         imageSource: '/images/reward1.png',
         description: React.createElement(
                 'p',
-                { className: 'text-[19px] min-[780px]:text-[21px] text-black/70' },
+                { className: 'text-[16px] sm:text-[19px] min-[780px]:text-[21px] 2xl:text-[24px] text-black/70' },
                 React.createElement('span', { className: 'font-bold' }, 'Get your complete order for free'),
                 ' by registering with an insurance company'
             )
@@ -15,7 +15,7 @@ const cardsConfig = [
         imageSource: '/images/reward2.png',
         description: React.createElement(
             'p',
-            { className: 'text-[19px] min-[780px]:text-[21px] text-black/70' },
+            { className: 'text-[16px] sm:text-[19px] min-[780px]:text-[21px] 2xl:text-[24px] text-black/70' },
             React.createElement('span', { className: 'font-bold' }, 'Get your delivery fee waived off'),
             ' by registering for a gym membership'
         )
@@ -24,7 +24,7 @@ const cardsConfig = [
         imageSource: '/images/reward3.png',
         description: React.createElement(
             'p',
-            { className: 'text-[19px] min-[780px]:text-[21px] text-black/70' },
+            { className: 'text-[16px] sm:text-[19px] min-[780px]:text-[21px] 2xl:text-[24px] text-black/70' },
             React.createElement('span', { className: 'font-bold' }, 'Get 30% discount on the order'),
             ' by subscribing for an entertainment platform'
         )
@@ -37,7 +37,7 @@ export default function RewardsCards() {
         <div className="flex flex-col gap-10 items-center w-[80%] mx-auto my-20 py-10">
             
             <div className="relative w-full flex justify-center items-center">
-                <div className="absolute top-[-60%] left-[-5%] min-[500px]:left-[1%] w-[40px] min-[600px]:w-[50px] min-[800px]:w-[60px] min-[880px]:w-[70px]">
+                <div className="absolute top-[-60%] left-[-5%] min-[500px]:left-[1%] w-[40px] min-[600px]:w-[50px] min-[800px]:w-[60px] min-[880px]:w-[70px] 2xl:w-[95px]">
                     <Image
                         className=""
                         src={'/heart.svg'}
@@ -48,7 +48,7 @@ export default function RewardsCards() {
                         alt="reward"
                     />
                 </div>
-                <div className="absolute top-[0%] right-[-5%] min-[500px]:right-[1%] w-[40px] min-[600px]:w-[50px] min-[800px]:w-[60px] min-[880px]:w-[70px]">
+                <div className="absolute top-[0%] right-[-5%] min-[500px]:right-[1%] w-[40px] min-[600px]:w-[50px] min-[800px]:w-[60px] min-[880px]:w-[70px] 2xl:w-[95px]">
                     <Image
                         className=""
                         src={'/gift.svg'}
@@ -59,7 +59,7 @@ export default function RewardsCards() {
                         alt="reward"
                     />
                 </div>
-                <p className="text-3xl min-[600px]:text-5xl min-[720px]:text-6xl min-[1000px]:text-7xl font-bold">Risk-free rewards <br></br> users want to click</p>
+                <p className="text-3xl min-[600px]:text-5xl min-[720px]:text-6xl min-[1000px]:text-7xl 2xl:text-8xl font-bold">Risk-free rewards <br></br> users want to click</p>
             </div>
 
             <div className="flex flex-col min-[880px]:flex-row max-[720px]:items-center justify-between flex-wrap md:flex-nowrap gap-4">
@@ -100,8 +100,8 @@ function RewardCard(props: RewardCardProps) {
                 </div>
                 <div className="flex flex-col gap-6 flex-1">
                     {description}
-                    <div className="max-w-[fit-content] font-agrandir rounded-xl px-6 py-[6px] border border-black bg-[#ADF0F2] font-bold min-[880px]:mt-auto">
-                        <p className="font-agrandir text-[18px] min-[780px]:text-[21px]">
+                    <div className="max-w-[fit-content] font-agrandir rounded-md sm:rounded-xl px-6 py-[6px] border border-black bg-[#ADF0F2] font-bold min-[880px]:mt-auto">
+                        <p className="font-agrandir text-[12px] sm:text-[18px] min-[780px]:text-[21px] 2xl:text-[24px]">
                             CLAIM
                         </p>
                     </div>

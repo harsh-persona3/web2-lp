@@ -25,7 +25,7 @@ export default function Footer(props: FooterProps) {
         </div>
         <div className="pt-16">
           <hr />
-          <p className="my-2 w-fit mx-auto font-agrandir">© 2024 Persona XYZ, Inc</p>
+          <p className="my-4 w-fit mx-auto font-agrandir">© 2024 Persona XYZ, Inc</p>
         </div>
       </div>
     </div>
