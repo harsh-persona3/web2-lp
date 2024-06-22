@@ -9,7 +9,7 @@ export default function Hero(props: HeroProps) {
   const { className, ...rest } = props;
   return (
     <div {...rest} className={twMerge("", className)}>
-      <div className="relative z-10 mx-auto min-h-[50vw]">
+      <div className="relative z-10 mx-auto min-h-[50vw] pt-20">
         <div className="w-full h-full absolute inset-0 -z-10">
           <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.01)" />
         </div>
