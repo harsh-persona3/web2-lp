@@ -7,17 +7,16 @@ interface InfoCardProps extends HTMLAttributes<HTMLDivElement> {
   description: string;
   reverse: boolean;
   color: string;
+  source: string;
 }
 
 export default function InfoCard(props: InfoCardProps) {
-  const { title, info, description, reverse, color } = props;
-
-  console.log(reverse);
+  const { title, info, description, reverse, color, source} = props;
 
   return (
     <div className={`flex ${reverse? 'flex-row-reverse':'flex-row'} flex-wrap${reverse? '':''} items-center justify-center gap-10 md:gap-20 py-10"`}>
       <div className="flex min-w-[300px] w-2/5 items-center justify-center lg:justify-start">
-        <img src={'/images/info-growth.png'} className="w-4/5" />
+        <img src={`/images/${source}.png`} className="w-4/5" />
       </div>
       <div className="flex flex-col text-center lg:text-left items-center lg:items-start gap-5 max-w-[400px]">
         <div className="max-w-[fit-content] flex-none border border-black z-10">
