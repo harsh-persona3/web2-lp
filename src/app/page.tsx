@@ -1,15 +1,20 @@
 import BackedBy from "@/components/BackedBy";
 import BrandsAndInfo from "@/components/BrandsAndInfo";
-import Footer from "@/components/Footer";
+import Footer, { Card } from "@/components/Footer";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import RewardsCards from "@/components/RewardsCards";
 
 export default function Home() {
   return (
     <main className="">
-      <Hero className="bg-gradient-to-b from-white to-white via-[#FFF3E9]" />
+      <Header />
+      <Hero />
       <BrandsAndInfo />
+      <RewardsCards />
       <BackedBy />
-      <Footer className="bg-[#FFF3E9] py-32" />
+      <Card />
+      <Footer className="mx-auto w-[80%]"/>
     </main>
   );
 }
