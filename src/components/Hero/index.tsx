@@ -22,7 +22,7 @@ export default function Hero(props: HeroProps) {
               World&apos;s only sponsored checkout experience
             </h1>
             <div>
-              <button className="bg-black text-white font-bold sm:px-14 sm:py-5 py-3 px-8 rounded-xl text-base md:text-xl xl:text-3xl pointer-events-auto cursor-none">
+              <button className="bg-black outline outline-black hover:scale-105 hover:bg-gradient-to-l from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] hover:text-black transition-all duration-500 ease-out text-white font-bold sm:px-14 sm:py-5 py-3 px-8 rounded-xl text-base md:text-xl xl:text-3xl pointer-events-auto cursor-none">
                 Book a demo
               </button>
             </div>
