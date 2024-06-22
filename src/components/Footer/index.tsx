@@ -23,6 +23,10 @@ export default function Footer(props: FooterProps) {
             classname={"capitalize pointer-events-auto cursor-none font-semibold p-1 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl bg-[white]"}
           ></CTAButton>
         </div>
+        <div className="pt-16">
+          <hr />
+          <p className="my-2 w-fit mx-auto font-agrandir">© 2024 Persona XYZ, Inc</p>
+        </div>
       </div>
     </div>
   );

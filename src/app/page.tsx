@@ -7,14 +7,14 @@ import Cursor from "@/components/ui/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="" id="main">
       <Cursor />
       <Hero />
       <BrandsAndInfo />
       {/* <RewardsCards /> */}
       <BackedBy />
       <Card />
-      <Footer className="py-32" />
+      <Footer className="pt-32 pb-8" />
     </main>
   );
 }
