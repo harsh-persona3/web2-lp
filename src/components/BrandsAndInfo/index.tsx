@@ -95,7 +95,7 @@ function AdvertiserInfo() {
             Target high intent users on the checkout pages of our partner websites.
           </p>
           <p className="text-lg md:text-lg lg:text-[26px] lg:leading-[36px]">
-            Pay only for conversions, not impressions. A portion of your payment subsidizes the user's checkout experience on our partner websites—making users love your brand!
+            Pay only for conversions, not impressions. A portion of your payment subsidizes the user&apos;s checkout experience on our partner websites—making users love your brand!
           </p>
         </div>
       </div>
