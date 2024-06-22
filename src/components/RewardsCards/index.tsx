@@ -65,7 +65,7 @@ function RewardCard(props: RewardCardProps) {
         <div className="w-[32%] bg-black rounded-xl">
             <div className="flex flex-col gap-5 rounded-xl font-agrandir p-4 border border-black bg-white translate-y-[-4px] translate-x-[-4px] h-full">
                 <img src={imageSource} className="w-full"></img>
-                <p className="text-2xl">{description}</p>
+                {description}
                 <div className="max-w-[fit-content] font-agrandir text-2xl rounded-xl px-6 py-2 border border-black bg-cyan-300 font-bold mt-auto">
                     <p className="font-agrandir">
                         CLAIM
