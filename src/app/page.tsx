@@ -9,10 +9,10 @@ import Cursor from "@/components/ui/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="" id="main">
+    <main id="main">
       <Cursor />
       <Header />
-      <Hero className="mb-20" />
+      <Hero className="mb-20" id="demo-container" />
       <BrandsAndInfo className="mb-20" />
       <BackedBy className="mx-auto w-[80%] mb-20" />
       <RewardsCards className="mx-auto w-[80%] mb-20 mt-40 md:mt-60 lg:mt-72 xl:mt-96 " />

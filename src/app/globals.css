@@ -12,4 +12,5 @@ body {
   color: black;
   font-family: var(--font-proxima-nova);
   cursor: none;
+  scroll-behavior: smooth;
 }

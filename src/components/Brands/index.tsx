@@ -71,7 +71,7 @@ export default function Brands(props: BrandsProps) {
       <p className="relative z-20 text-base sm:text-xl md:text-2xl lg:text-4xl text-black sm:max-w-[70vw] text-center">
         We are trusted by the best. All the brands that keep customers happy. We create win-win-win scenarios.
       </p>
-      <CTAButton title="Join Us" classname="font-semibold bg-white text-lg sm:text-xl md:text-2xl sm:px-24 cursor-none sm:py-4 relative z-20" />
+      <CTAButton href="https://www.persona3.io/contact" target="_blank" title="Get in touch" classname="font-semibold bg-white text-lg sm:text-xl md:text-2xl sm:px-24 cursor-none sm:py-4 relative z-20" />
       <div className="md:hidden grid gap-4 place-items-center w-full" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(70px, 1fr" }}>
         {images.map((image, index) => {
           return (
