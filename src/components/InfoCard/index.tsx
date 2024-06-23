@@ -1,4 +1,3 @@
-"use client";
 import { HTMLAttributes } from "react";
 
 interface InfoCardProps extends HTMLAttributes<HTMLDivElement> {
@@ -15,7 +14,7 @@ export default function InfoCard(props: InfoCardProps) {
 
   return (
     <div className={`flex ${reverse? 'flex-row-reverse':'flex-row'} flex-wrap${reverse? '':''} items-center justify-center gap-10 md:gap-20 py-10"`}>
-      <div className="flex min-w-[300px] w-2/5 items-center justify-center lg:justify-start">
+      {/* <div className="flex min-w-[300px] w-2/5 items-center justify-center lg:justify-start">
         <img src={`/images/${source}.png`} className="w-4/5" />
       </div>
       <div className="flex flex-col text-center lg:text-left items-center lg:items-start gap-5 max-w-[400px]">
@@ -30,7 +29,7 @@ export default function InfoCard(props: InfoCardProps) {
         <p className="text-lg md:text-lg lg:text-xl leading-normal">
           {description}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

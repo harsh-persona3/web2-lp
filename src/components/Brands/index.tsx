@@ -1,15 +1,19 @@
 import { HTMLAttributes } from "react";
 import CTAButton from "../CTA";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 interface BrandsProps extends HTMLAttributes<HTMLDivElement> {}
 
+const images = ["/images/linkedin.png", "/images/alexa.png", "/images/uber.png", "/images/paypal.png", "/images/uber-eats.png", "/images/amazon.png"];
+
 export default function Brands(props: BrandsProps) {
+  const { className, ...rest } = props;
   return (
-    <div className="flex flex-col items-center justify-center gap-6 min-h-[50vw] py-16 px-10 relative z-20">
-      <div className="hidden sm:block absolute inset-0 top-[40%]">
+    <div className={twMerge(`flex flex-col items-center justify-center gap-6 min-h-[50vw] relative z-20`, className)} {...rest}>
+      <div className="hidden md:block absolute inset-0 top-[40%]">
         <Image
-          src="/images/linkedin.png"
+          src={images[0]}
           alt="brand"
           className="absolute rounded-xl left-[5%] z-10"
           width={0}
@@ -18,7 +22,7 @@ export default function Brands(props: BrandsProps) {
           style={{ width: "5vw", minWidth: "40px" }}
         />
         <Image
-          src="/images/alexa.png"
+          src={images[1]}
           alt="brand"
           className="absolute rounded-xl top-[33%] left-[10%] z-10"
           width={0}
@@ -27,7 +31,7 @@ export default function Brands(props: BrandsProps) {
           style={{ width: "5vw", minWidth: "40px" }}
         />
         <Image
-          src="/images/uber.png"
+          src={images[2]}
           alt="brand"
           className="absolute rounded-xl top-[66%] left-[20%] z-10"
           width={0}
@@ -36,7 +40,7 @@ export default function Brands(props: BrandsProps) {
           style={{ width: "5vw", minWidth: "40px" }}
         />
         <Image
-          src="/images/blinkist.png"
+          src={images[3]}
           alt="brand"
           className="absolute rounded-xl top-[66%] right-[20%] z-10"
           width={0}
@@ -45,7 +49,7 @@ export default function Brands(props: BrandsProps) {
           style={{ width: "5vw", minWidth: "40px" }}
         />
         <Image
-          src="/images/uber-eats.png"
+          src={images[4]}
           alt="brand"
           className="absolute rounded-xl right-[5%] z-10"
           width={0}
@@ -54,18 +58,9 @@ export default function Brands(props: BrandsProps) {
           style={{ width: "5vw", minWidth: "40px" }}
         />
         <Image
-          src="/images/amazon.png"
+          src={images[5]}
           alt="brand"
           className="absolute rounded-xl top-[33%] right-[10%] z-10"
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "5vw", minWidth: "40px" }}
-        />
-        <Image
-          src="/images/oracle.png"
-          alt="brand"
-          className="absolute rounded-xl -top-[40%] right-[4%] z-10"
           width={0}
           height={0}
           sizes="100vw"
@@ -77,6 +72,13 @@ export default function Brands(props: BrandsProps) {
         We are trusted by the best. All the brands that keep customers happy. We create win-win-win scenarios.
       </p>
       <CTAButton title="Join Us" classname="font-semibold bg-white text-lg sm:text-xl md:text-2xl sm:px-24 cursor-none sm:py-4 relative z-20" />
+      <div className="md:hidden grid gap-4 place-items-center w-full" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(70px, 1fr" }}>
+        {images.map((image, index) => {
+          return (
+            <Image key={index} alt="brand" src={image} className="rounded-xl" width={0} height={0} sizes="100vw" style={{ width: "5vw", minWidth: "40px" }} />
+          );
+        })}
+      </div>
     </div>
   );
 }
