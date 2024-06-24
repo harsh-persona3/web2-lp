@@ -9,26 +9,26 @@ export default function Footer(props: FooterProps) {
     <>
       <div {...rest}>
         <div className="mx-auto w-[80%] relative">
-          <p className="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">We are changing advertising for the benefit of ALL</p>
-          <p className="mt-5 text-center font-normal font-agrandir text-lg sm:text-xl md:text-2xl">
+          <p className="w-[100%] md:w-[100%] lg:w-[90%] 2xl:w-[80%] text-center font-bold text-4xl sm:text-5xl md:text-6xl xl:text-7xl mx-auto">We are changing advertising for the benefit of ALL</p>
+          <p className="w-[100%] md:w-[100%] lg:w-[90%] 2xl:w-[80%] mt-5 text-center font-normal font-agrandir text-lg sm:text-xl md:text-2xl mx-auto">
             At Persona, we are passionate about helping businesses achieve explosive growth through scalable and innovative financial incentives. Let us show
             you what sets us apart.
           </p>
           <div className="flex gap-8 mx-auto w-fit mt-10">
             <CTAButton
               href="https://www.persona3.io/contact"
-              target="_black"
+              target="_blank"
               title={"Get in touch"}
-              classname={"capitalize pointer-events-auto cursor-none font-semibold p-1 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl bg-[#CBC1FF]"}
+              classname={"capitalize pointer-events-auto cursor-none font-semibold p-1 2xl:py-4 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl bg-[#CBC1FF]"}
             ></CTAButton>
             <ViewDemoBtn />
           </div>
-          <div className="pt-16">
+          <div className="pt-16 lg:pt-36">
             <hr />
             <p className="my-4 w-fit mx-auto font-agrandir">© 2024 Persona XYZ, Inc</p>
           </div>
 
-          <div className="absolute z-10 -left-36 top-0 w-full w-[261px] md:w-[301px] lg:w-[401px] 2xl:w-[501px]">
+          <div className="hidden lg:block pointer-events-none absolute z-10 -left-[220px] xl:-left-[190px] top-0 xl:-top-6 w-[301px] 2xl:w-[401px]">
             <svg
               width="100%"
               height="100%"
@@ -58,7 +58,7 @@ export default function Footer(props: FooterProps) {
             </svg>
           </div>
 
-          <div className="absolute z-10 -right-5 md:-right-20 top-[120px] sm:top-0 md:-top-12 w-full  w-[401px] max-w-[550px]-w-[501px] sm:w-[601px] md:w-[551px] lg:w-[801px] 2xl:w-[901px]">
+          <div className="hidden lg:block pointer-events-none absolute z-10 -right-10 2xl:-right-10 top-0 2xl:-top-10 w-[701px] 2xl:w-[901px]">
             <svg
               width="100%"
               height="100%"
