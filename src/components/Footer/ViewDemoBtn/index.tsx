@@ -11,7 +11,7 @@ function ViewDemoBtn() {
     <CTAButton
       onClick={onBtnClick}
       title={"View demo"}
-      classname={"capitalize pointer-events-auto cursor-none font-semibold p-1 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl bg-[white]"}
+      classname={"capitalize pointer-events-auto cursor-none font-semibold p-1 2xl:py-4 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl bg-[white]"}
     ></CTAButton>
   );
 }
