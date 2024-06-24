@@ -28,8 +28,8 @@ export default function Hero(props: HeroProps) {
             </h1>
             <BookADemoBtn />
           </div>
-          <div className="w-[70%] sm:w-[50vw] aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
-            <Image
+          <div className="w-[80%] sm:w-[30vw] md:w-1/2 lg:w-[50vw] aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
+            {/* <Image
               className="absolute sm:-top-[13%] sm:-left-[8.5%] -top-[9%] -left-[6%]"
               src={"/images/cart.png"}
               width={0}
@@ -37,8 +37,8 @@ export default function Hero(props: HeroProps) {
               sizes="100vw"
               style={{ width: "10vw" }}
               alt="cart"
-            />
-            <video autoPlay muted className="rounded-2xl" loop>
+            /> */}
+            <video autoPlay muted className="rounded-2xl w-full" loop>
               <source src="/videos/herosection-2.mp4" type="video/mp4"/>
             </video>
             {/* <div className="absolute inset-0 overflow-hidden rounded-2xl">
