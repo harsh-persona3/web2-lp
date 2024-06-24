@@ -27,7 +27,7 @@ export default function WinWinWin(props: HTMLAttributes<HTMLDivElement>) {
               <Image className="" src={"/images/win2.png"} width={0} height={0} style={{ width: "100%" }} sizes="100vw" alt="reward" />
             </div>
             <p>
-              Advertiser&apos;s zero-risk <br />
+              Advertisers&apos; zero-risk <br />
               acquisition
             </p>
           </div>

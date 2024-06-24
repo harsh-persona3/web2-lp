@@ -33,7 +33,7 @@ function CheckoutPartnersInfo() {
         <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
           Grow lifetime revenue at zero cost through Persona’s checkout flywheel
         </p>
-        <p className="text-lg md:text-xl lg:text-2xl">Subsidize your user’s checkout all sponsored by Persona’s advertising partners.</p>
+        <p className="text-lg md:text-xl lg:text-2xl">Subsidize your user’s checkout all sponsored by Persona’s advertising partners. Best rewards → happy customers → more checkouts  →  increase in sales </p>
       </div>
       <div className="w-full lg:w-[50%] aspect-[584/458]">
         <Image src={"/images/info1.png"} width={0} height={0} sizes="100vw" style={{ width: "100%" }} alt="lifetime revenue" />
@@ -55,11 +55,10 @@ function AdvertiserInfo() {
           </div>
         </div>
         <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-          Target high intent users on the checkout pages of our partner websites.
+          Target high intent users on the checkout pages of our premium partners
         </p>
         <p className="text-lg md:text-xl lg:text-2xl">
-          Pay only for conversions, not impressions. A portion of your payment subsidizes the user&apos;s checkout experience on our partner websites—making
-          users love your brand!
+          Pay only for conversions, not impressions. A portion of your payment subsidizes the user&apos;s checkout experience on partner websites and apps.
         </p>
       </div>
       <div className="w-[50%] lg:w-[50%] mx-auto lg:mx-0">
