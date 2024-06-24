@@ -22,8 +22,8 @@ export async function POST(request: NextRequest) {
       rejectUnauthorized: false,
     },
     auth: {
-      user: 'username',
-      pass: 'password',
+      user: username,
+      pass: password,
     },
   });
 
