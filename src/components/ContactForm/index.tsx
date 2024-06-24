@@ -15,10 +15,12 @@ const items = [
   },
 ];
 
-interface ContactFormProps extends HTMLAttributes<HTMLDivElement> {}
+interface ContactFormProps extends HTMLAttributes<HTMLDivElement> {
+  onSubmitSuccess: () => void;
+}
 
 export default function ContactForm(props: ContactFormProps) {
-  const { className, ...rest } = props;
+  const { className, onSubmitSuccess, ...rest } = props;
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
 
   const [name, setName] = useState("");
@@ -91,7 +93,7 @@ export default function ContactForm(props: ContactFormProps) {
       if (!response.ok) {
         throw new Error(`response status: ${response.status}`);
       }
-      
+      onSubmitSuccess();
     } catch (err) {
       console.error(err);
       alert("Error, please try resubmitting the form");
@@ -130,9 +132,7 @@ export default function ContactForm(props: ContactFormProps) {
           type="text"
           required
           name="name"
-          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
-            name ? "bg-white" : "bg-[#F3F3F3]/50"
-          }`}
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${name ? "bg-white" : "bg-[#F3F3F3]/50"}`}
           placeholder="Name"
           value={name}
           onChange={handleInputChange}
@@ -143,9 +143,7 @@ export default function ContactForm(props: ContactFormProps) {
           type="email"
           required
           name="email"
-          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
-            email ? "bg-white" : "bg-[#F3F3F3]/50"
-          }`}
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${email ? "bg-white" : "bg-[#F3F3F3]/50"}`}
           placeholder="Email"
           value={email}
           onChange={handleInputChange}
@@ -155,18 +153,14 @@ export default function ContactForm(props: ContactFormProps) {
           type="text"
           required
           name="website"
-          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
-            website ? "bg-white" : "bg-[#F3F3F3]/50"
-          }`}
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${website ? "bg-white" : "bg-[#F3F3F3]/50"}`}
           placeholder="Company Website"
           value={website}
           onChange={handleInputChange}
           disabled={isSubmittingForm}
         />
         <textarea
-          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
-            comments ? "bg-white" : "bg-[#F3F3F3]/50"
-          }`}
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${comments ? "bg-white" : "bg-[#F3F3F3]/50"}`}
           placeholder="Comments"
           value={comments}
           name="comments"
@@ -207,9 +201,7 @@ const CheckboxCard = (props: CheckBoxProps) => {
         checked={isChecked}
         onCheckedChange={onCheckedChange}
         value={value}
-        className={`w-[25px] h-[25px] flex items-center justify-center border border-transparent rounded-md  ${
-          isChecked ? "bg-white" : "bg-neutral-200/80"
-        }`}
+        className={`w-[25px] h-[25px] flex items-center justify-center border border-transparent rounded-md  ${isChecked ? "bg-white" : "bg-neutral-200/80"}`}
       >
         <Checkbox.Indicator>{isChecked === true && <CheckIcon />}</Checkbox.Indicator>
       </Checkbox.Root>
@@ -218,8 +210,4 @@ const CheckboxCard = (props: CheckBoxProps) => {
       </label>
     </div>
   );
-};
-
-const FormSubmissionFeedback = () => {
-  return <div></div>;
 };
