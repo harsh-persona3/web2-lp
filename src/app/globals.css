@@ -11,6 +11,5 @@ body {
   background: rgba(255, 255, 255, 1);
   color: black;
   font-family: var(--font-proxima-nova);
-  cursor: none;
   scroll-behavior: smooth;
 }

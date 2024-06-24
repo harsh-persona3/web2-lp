@@ -130,7 +130,7 @@ export default function ContactForm(props: ContactFormProps) {
           type="text"
           required
           name="name"
-          className={`px-3 py-2 cursor-none w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
             name ? "bg-white" : "bg-[#F3F3F3]/50"
           }`}
           placeholder="Name"
@@ -143,7 +143,7 @@ export default function ContactForm(props: ContactFormProps) {
           type="email"
           required
           name="email"
-          className={`px-3 py-2 cursor-none w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
             email ? "bg-white" : "bg-[#F3F3F3]/50"
           }`}
           placeholder="Email"
@@ -155,7 +155,7 @@ export default function ContactForm(props: ContactFormProps) {
           type="text"
           required
           name="website"
-          className={`px-3 py-2 cursor-none w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
             website ? "bg-white" : "bg-[#F3F3F3]/50"
           }`}
           placeholder="Company Website"
@@ -164,7 +164,7 @@ export default function ContactForm(props: ContactFormProps) {
           disabled={isSubmittingForm}
         />
         <textarea
-          className={`px-3 py-2 cursor-none w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
+          className={`px-3 py-2 w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
             comments ? "bg-white" : "bg-[#F3F3F3]/50"
           }`}
           placeholder="Comments"
@@ -177,7 +177,7 @@ export default function ContactForm(props: ContactFormProps) {
         <button
           type="submit"
           disabled={isSubmittingForm}
-          className="bg-black outline block outline-black hover:scale-105  hover:bg-gradient-to-l from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] hover:text-black transition-all duration-500 ease-out text-white font-bold py-2 px-4 rounded-xl text-base md:text-lg xl:text-xl pointer-events-auto cursor-none"
+          className="bg-black outline block outline-black hover:scale-105  hover:bg-gradient-to-l from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] hover:text-black transition-all duration-500 ease-out text-white font-bold py-2 px-4 rounded-xl text-base md:text-lg xl:text-xl pointer-events-auto"
         >
           {isSubmittingForm ? "Submitting your details..." : "Submit"}
         </button>
@@ -207,13 +207,13 @@ const CheckboxCard = (props: CheckBoxProps) => {
         checked={isChecked}
         onCheckedChange={onCheckedChange}
         value={value}
-        className={`w-[25px] h-[25px] flex items-center justify-center border border-transparent rounded-md  cursor-none ${
+        className={`w-[25px] h-[25px] flex items-center justify-center border border-transparent rounded-md  ${
           isChecked ? "bg-white" : "bg-neutral-200/80"
         }`}
       >
         <Checkbox.Indicator>{isChecked === true && <CheckIcon />}</Checkbox.Indicator>
       </Checkbox.Root>
-      <label className={`${isChecked ? "font-bold" : "font-normal"} text-black cursor-none text-sm md:text-base lg:text-xl`} htmlFor={value}>
+      <label className={`${isChecked ? "font-bold" : "font-normal"} text-black text-sm md:text-base lg:text-xl`} htmlFor={value}>
         {label}
       </label>
     </div>

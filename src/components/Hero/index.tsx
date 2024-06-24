@@ -1,15 +1,20 @@
-import { HTMLAttributes } from "react";
+"use client";
+import { HTMLAttributes, useContext } from "react";
 import AnimatedGrid from "../AnimatedGrid";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
+import BookADemoBtn from "./BookADemoBtn";
+import { SheetContext } from "../ui/Sheet";
 
 interface HeroProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Hero(props: HeroProps) {
   const { className, ...rest } = props;
+  const { isSheetOpen, side } = useContext(SheetContext) ?? {};
+
   return (
     <div {...rest} className={twMerge("", className)}>
-      <div className="relative z-10 mx-auto min-h-[50vw] pt-20">
+      <div className={`relative ${isSheetOpen && side === 'right' ? "z-[99]" : "z-20"} mx-auto min-h-[50vw] pt-20`}>
         <div className="w-full h-full absolute inset-0 -z-10">
           <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.01)" />
         </div>
@@ -21,15 +26,7 @@ export default function Hero(props: HeroProps) {
             <h1 className="text-center sm:text-left font-bold text-4xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl ">
               World&apos;s only sponsored checkout experience
             </h1>
-            <div>
-              <a
-                href="https://www.persona3.io/contact"
-                target="_blank"
-                className="bg-black outline block outline-black hover:scale-105  hover:bg-gradient-to-l from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] hover:text-black transition-all duration-500 ease-out text-white font-bold sm:px-14 sm:py-5 py-3 px-8 rounded-xl text-base md:text-xl xl:text-3xl pointer-events-auto cursor-none"
-              >
-                Book a demo
-              </a>
-            </div>
+            <BookADemoBtn />
           </div>
           <div className="w-[70%] sm:w-[50vw] aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
             <Image

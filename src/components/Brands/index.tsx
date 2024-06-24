@@ -2,6 +2,7 @@ import { HTMLAttributes } from "react";
 import CTAButton from "../CTA";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
+import CTA from "./CTA";
 
 interface BrandsProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -10,7 +11,7 @@ const images = ["/images/linkedin.png", "/images/alexa.png", "/images/uber.png",
 export default function Brands(props: BrandsProps) {
   const { className, ...rest } = props;
   return (
-    <div className={twMerge(`flex flex-col items-center justify-center gap-6 min-h-[50vw] relative z-20`, className)} {...rest}>
+    <div className={twMerge(`flex flex-col items-center justify-center gap-6 min-h-[50vw] relative`, className)} {...rest}>
       <div className="hidden md:block absolute inset-0 top-[40%]">
         <Image
           src={images[0]}
@@ -71,7 +72,7 @@ export default function Brands(props: BrandsProps) {
       <p className="relative z-20 text-base sm:text-xl md:text-2xl lg:text-4xl text-black sm:max-w-[70vw] text-center">
         We are trusted by the best. All the brands that keep customers happy. We create win-win-win scenarios.
       </p>
-      <CTAButton href="https://www.persona3.io/contact" target="_blank" title="Get in touch" classname="font-semibold bg-white text-lg sm:text-xl md:text-2xl sm:px-24 cursor-none sm:py-4 relative z-20" />
+      <CTA/>
       <div className="md:hidden grid gap-4 place-items-center w-full" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(70px, 1fr" }}>
         {images.map((image, index) => {
           return (

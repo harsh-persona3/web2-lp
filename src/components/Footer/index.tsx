@@ -1,6 +1,7 @@
 import { HTMLAttributes } from "react";
 import CTAButton from "../CTA";
 import ViewDemoBtn from "./ViewDemoBtn";
+import GetInTouchBtn from "./GetInTouchBtn";
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Footer(props: FooterProps) {
@@ -15,12 +16,7 @@ export default function Footer(props: FooterProps) {
             you what sets us apart.
           </p>
           <div className="flex gap-8 mx-auto w-fit mt-10">
-            <CTAButton
-              href="https://www.persona3.io/contact"
-              target="_blank"
-              title={"Get in touch"}
-              classname={"capitalize pointer-events-auto cursor-none font-semibold p-1 2xl:py-4 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl bg-[#CBC1FF]"}
-            ></CTAButton>
+            <GetInTouchBtn/>
             <ViewDemoBtn />
           </div>
           <div className="pt-16 lg:pt-36">
