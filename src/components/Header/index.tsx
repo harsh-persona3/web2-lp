@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] "
                 onClick={openSheet}
               >
-                GET STARTED
+                GET IN TOUCH
               </button>
             );
           }}
@@ -119,7 +119,7 @@ const OverlayMenu: React.FC<OverlayMenuProps> = ({ isOpen, onClose }) => {
                   className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] "
                   onClick={openSheet}
                 >
-                  GET STARTED
+                  GET IN TOUCH
                 </button>
               );
             }}
