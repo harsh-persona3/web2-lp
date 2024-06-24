@@ -2,7 +2,6 @@
 import React, { useState, useEffect, HTMLAttributes, PropsWithChildren } from "react";
 import Image from "next/image";
 import SheetProvider from "../ui/Sheet";
-import ContactForm from "../ContactForm";
 
 interface HeaderProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -38,35 +37,28 @@ const Header: React.FC<HeaderProps> = (props) => {
         <Image className="" src={"/images/persona.png"} width={0} height={0} style={{ width: "100%" }} sizes="100vw" alt="reward" />
       </div>
       <div className="items-center text-md 2xl:text-xl gap-8 hidden md:flex">
-        <a href="https://www.persona3.io/#advertisers" target="_blank" className="cursor-none">
+        <a href="#checkout-partners" className="">
           <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300 ease-out">
             CHECKOUT PARTNERS
           </p>
         </a>
-        <a href="https://www.persona3.io/#Publishers" target="_blank" className="cursor-none">
+        <a href="#advertisers" className="">
           <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300 ease-out">
             ADVERTISERS
           </p>
         </a>
-        <SheetProvider side="right">
-          <SheetProvider.Trigger>
-            {({ openSheet }) => {
-              return (
-                <button
-                  className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] cursor-none"
-                  onClick={openSheet}
-                >
-                  GET STARTED
-                </button>
-              );
-            }}
-          </SheetProvider.Trigger>
-          <SheetProvider.Content className="bg-white min-h-screen top-0 right-0 duration-500 rounded-tl-2xl rounded-bl-2xl">
-            {() => {
-              return <ContactForm className="p-16 h-screen" />;
-            }}
-          </SheetProvider.Content>
-        </SheetProvider>
+        <SheetProvider.Trigger>
+          {({ openSheet }) => {
+            return (
+              <button
+                className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] "
+                onClick={openSheet}
+              >
+                GET STARTED
+              </button>
+            );
+          }}
+        </SheetProvider.Trigger>
       </div>
       <HamburgerMenu onClick={toggleOverlay} />
       <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlay} />
@@ -109,35 +101,29 @@ const OverlayMenu: React.FC<OverlayMenuProps> = ({ isOpen, onClose }) => {
 
         <div className="flex flex-col items-center my-auto text-md gap-8 md:hidden">
           <Image className="" src={"/images/persona.png"} width={120} height={120} sizes="100vw" alt="reward" />
-          <a href="https://www.persona3.io/#advertisers" target="_blank" className="cursor-none">
-            <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
+          <a href="#checkout-partners" className="" onClick={onClose}>
+            <p className="hover:bg-gradient-to-r text-center hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
               CHECKOUT PARTNERS
             </p>
           </a>
-          <a href="https://www.persona3.io/#Publishers" target="_blank" className="cursor-none">
+          <a href="#advertisers" className="" onClick={onClose}>
             <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
               ADVERTISERS
             </p>
           </a>
-          <SheetProvider side="bottom">
-            <SheetProvider.Trigger>
-              {({ openSheet }) => {
-                return (
-                  <button
-                    className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] cursor-none"
-                    onClick={openSheet}
-                  >
-                    GET STARTED
-                  </button>
-                );
-              }}
-            </SheetProvider.Trigger>
-            <SheetProvider.Content className="bg-white left-0 bottom-0 right-0 duration-500 rounded-tl-2xl rounded-tr-2xl max-h-[calc(100vh-20%)] overflow-auto">
-              {() => {
-                return <ContactForm className="p-8" />;
-              }}
-            </SheetProvider.Content>
-          </SheetProvider>
+
+          <SheetProvider.Trigger>
+            {({ openSheet }) => {
+              return (
+                <button
+                  className="relative px-4 py-2 text-sm 2xl:text-xl text-[#6250C8] font-bold hover:scale-105 rounded-md border border-[#6F6477] border-solid transition-all duration-200 ease-in-out transform hover:shadow-md hover:shadow-purple-500 hover:translate-y-[0px] "
+                  onClick={openSheet}
+                >
+                  GET STARTED
+                </button>
+              );
+            }}
+          </SheetProvider.Trigger>
         </div>
       </div>
     </div>

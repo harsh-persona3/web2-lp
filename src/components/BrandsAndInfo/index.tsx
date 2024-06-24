@@ -19,7 +19,7 @@ export default function BrandsAndInfo(props: HTMLAttributes<HTMLDivElement>) {
 
 function CheckoutPartnersInfo() {
   return (
-    <div className="flex items-start justify-between lg:gap-20 gap-10 flex-wrap">
+    <div className="flex items-center justify-between lg:gap-20 gap-10 flex-wrap" id="checkout-partners">
       <div className="w-full group lg:w-[40%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
         <div className="w-fit relative bg-transparent">
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">
@@ -31,7 +31,7 @@ function CheckoutPartnersInfo() {
         </div>
 
         <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-          Grow lifetime revenue at zero cost through Persona’s checkout flywheel!!!
+          Grow lifetime revenue at zero cost through Persona’s checkout flywheel
         </p>
         <p className="text-lg md:text-xl lg:text-2xl">Subsidize your user’s checkout all sponsored by Persona’s advertising partners.</p>
       </div>
@@ -44,7 +44,7 @@ function CheckoutPartnersInfo() {
 
 function AdvertiserInfo() {
   return (
-    <div className="flex flex-row-reverse items-start justify-between lg:gap-20 gap-10 flex-wrap">
+    <div className="flex flex-row-reverse items-start justify-between lg:gap-20 gap-10 flex-wrap" id="advertisers">
       <div className="w-full group lg:w-[40%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
         <div className="w-fit relative bg-transparent">
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">

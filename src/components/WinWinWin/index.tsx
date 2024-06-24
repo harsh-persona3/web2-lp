@@ -19,7 +19,7 @@ export default function WinWinWin(props: HTMLAttributes<HTMLDivElement>) {
               <Image className="" src={"/images/win1.png"} width={0} height={0} style={{ width: "100%" }} sizes="100vw" alt="reward" />
             </div>
             <p>
-              Publishers increase <br /> conversions
+              Checkout Partners increase <br /> conversions
             </p>
           </div>
           <div className="sm:w-[33%] flex flex-col items-center text-center justify-center gap-4 sm:gap-6">
@@ -27,7 +27,7 @@ export default function WinWinWin(props: HTMLAttributes<HTMLDivElement>) {
               <Image className="" src={"/images/win2.png"} width={0} height={0} style={{ width: "100%" }} sizes="100vw" alt="reward" />
             </div>
             <p>
-              Advertisers zero-risk <br />
+              Advertiser&apos;s zero-risk <br />
               acquisition
             </p>
           </div>
@@ -36,7 +36,7 @@ export default function WinWinWin(props: HTMLAttributes<HTMLDivElement>) {
               <Image className="" src={"/images/win3.png"} width={0} height={0} style={{ width: "100%" }} sizes="100vw" alt="reward" />
             </div>
             <p>
-              Users financial <br /> incentives
+              Users gain financial <br /> incentives
             </p>
           </div>
         </div>
