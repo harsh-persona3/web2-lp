@@ -16,7 +16,7 @@ export default function Hero(props: HeroProps) {
     <div {...rest} className={twMerge("", className)}>
       <div className={`relative ${isSheetOpen && side === 'right' ? "z-[99]" : "z-20"} mx-auto min-h-[50vw] pt-20`}>
         <div className="w-full h-full absolute inset-0 -z-10">
-          <AnimatedGrid squareSize={200} gridColor="rgba(0, 0, 0, 0.01)" />
+          <AnimatedGrid squareSize={100} gridColor="rgba(0, 0, 0, 0.01)" />
         </div>
         <div className="absolute right-[20%] m-auto w-[20vw] aspect-square rounded-full bg-gradient-to-b from-[#8BFCFF] via-[#8BFCFF] to-[#8BFCFF] blur-[5vw] "></div>
         <div className="absolute left-[15%] top-[50%] m-auto w-[30vw] aspect-square rounded-full bg-gradient-to-b from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] blur-[5vw] "></div>
@@ -39,7 +39,8 @@ export default function Hero(props: HeroProps) {
               alt="cart"
             /> */}
             <video autoPlay muted className="rounded-2xl w-full" loop>
-              <source src="/videos/herosection-2.mp4" type="video/mp4"/>
+            <source src="/videos/demo.webm" type="video/webm"/>
+              <source src="/videos/demo.mp4" type="video/mp4"/>
             </video>
             {/* <div className="absolute inset-0 overflow-hidden rounded-2xl">
               <div className="w-full bg-[#D8D8D8] opacity-60 absolute top-[5%] py-1 -z-10">
