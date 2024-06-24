@@ -38,7 +38,7 @@ export default function Hero(props: HeroProps) {
               style={{ width: "10vw" }}
               alt="cart"
             /> */}
-            <video autoPlay muted className="rounded-2xl w-full" loop>
+            <video autoPlay muted playsInline className="rounded-2xl w-full" loop>
             <source src="/videos/demo.webm" type="video/webm"/>
               <source src="/videos/demo.mp4" type="video/mp4"/>
             </video>
