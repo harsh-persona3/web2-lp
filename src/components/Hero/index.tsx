@@ -38,7 +38,10 @@ export default function Hero(props: HeroProps) {
               style={{ width: "10vw" }}
               alt="cart"
             />
-            <div className="absolute inset-0 overflow-hidden rounded-2xl">
+            <video autoPlay muted className="rounded-2xl" loop>
+              <source src="/videos/herosection-2.mp4" type="video/mp4"/>
+            </video>
+            {/* <div className="absolute inset-0 overflow-hidden rounded-2xl">
               <div className="w-full bg-[#D8D8D8] opacity-60 absolute top-[5%] py-1 -z-10">
                 <p className="text-xs sm:text-sm md:text-lg relative left-[15%]">https://www.yourshopping.com</p>
               </div>
@@ -62,7 +65,7 @@ export default function Hero(props: HeroProps) {
                 style={{ width: "25vw" }}
                 alt="palce order"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
