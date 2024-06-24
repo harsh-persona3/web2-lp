@@ -6,10 +6,10 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-proxima-nova)"],
-        agrandir: ["var(--font-agrandir)"]
+        agrandir: ["var(--font-agrandir)"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
