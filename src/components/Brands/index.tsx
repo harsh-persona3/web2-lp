@@ -1,8 +1,6 @@
 import { HTMLAttributes } from "react";
-import CTAButton from "../CTA";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import CTA from "./CTA";
 
 interface BrandsProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -72,7 +70,7 @@ export default function Brands(props: BrandsProps) {
       <p className="relative z-20 text-base sm:text-xl md:text-2xl lg:text-4xl text-black sm:max-w-[70vw] text-center">
         We are trusted by the best. All the brands that keep customers happy. We create win-win-win scenarios.
       </p>
-      <CTA/>
+      {/* <CTA/> */}
       <div className="grid gap-4 place-items-center md:w-4/5 md:mx-auto w-full" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(70px, 1fr" }}>
         {images.map((image, index) => {
           return (

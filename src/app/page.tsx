@@ -15,10 +15,14 @@ export default function Home() {
         <Header />
         <Hero className="mb-20" id="demo-container" />
         <BrandsAndInfo className="mb-20" />
-        <BackedBy className="mx-auto w-[80%] mb-20" />
-        <RewardsCards className="mx-auto w-[80%] mb-20 mt-40 md:mt-60 lg:mt-72 xl:mt-96 " />
-        <WinWinWin className="mx-auto w-[80%] mb-20 mt-40 md:mt-48 lg:mt-52 xl:mt-60 " />
-        <Footer className="py-20" />
+        <RewardsCards className="mx-auto w-[80%] mb-10 mt-20 md:mt-20 lg:mt-32 xl:mt-52 " />
+        <WinWinWin className="mx-auto w-[80%] mb-8 md:mb-20 mt-24 md:mt-40 lg:mt-32 xl:mt-52 " />
+        <Footer className="py-10" />
+        <BackedBy className="mx-auto w-[80%] mt-20 mb-10" />
+        <div className="pt-4 mx-auto w-[80%] ">
+          <hr />
+          <p className="my-4 w-fit mx-auto font-agrandir">© 2024 Persona XYZ, Inc</p>
+        </div>
       </ContactFormSheetContainer>
     </main>
   );
