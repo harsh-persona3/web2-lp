@@ -33,7 +33,7 @@ function CheckoutPartnersInfo() {
         <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
           Grow lifetime revenue at zero cost through Persona’s checkout flywheel
         </p>
-        <p className="text-lg md:text-xl lg:text-2xl">Subsidize your user’s checkout all sponsored by Persona’s advertising partners</p>
+        <p className="text-lg md:text-xl lg:text-2xl">Subsidize your user’s checkout all sponsored by Persona’s advertising partners.</p>
       </div>
       <div className="w-full lg:w-[50%] aspect-[584/458]">
         <Image src={"/images/info1.png"} width={0} height={0} sizes="100vw" style={{ width: "100%" }} alt="lifetime revenue" />
