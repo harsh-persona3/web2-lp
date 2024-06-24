@@ -11,7 +11,7 @@ export default function GetInTouchBtn() {
             onClick={openSheet}
             title={"Get in touch"}
             classname={
-              "capitalize pointer-events-auto font-semibold p-1 2xl:py-4 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl bg-[#CBC1FF] "
+              "capitalize cursor-pointer pointer-events-auto font-semibold p-1 2xl:py-4 sm:px-8 md:px-12 text-xs sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl bg-[#CBC1FF] "
             }
           ></CTAButton>
         );
