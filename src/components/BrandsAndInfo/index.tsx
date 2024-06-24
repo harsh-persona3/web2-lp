@@ -7,7 +7,7 @@ export default function BrandsAndInfo(props: HTMLAttributes<HTMLDivElement>) {
   const { className, ...rest } = props;
   return (
     <div className={twMerge(`w-full bg-blue bg-gradient-to-b from-white to-white via-cyan-200`, className)} {...rest}>
-      <Brands className="mb-20 mx-10" />
+      <Brands className="mx-10" />
       <div className="flex flex-col gap-16 sm:gap-32 mx-auto sm:w-[85%] w-4/5">
         <CheckoutPartnersInfo />
         <AdvertiserInfo />
@@ -19,7 +19,7 @@ export default function BrandsAndInfo(props: HTMLAttributes<HTMLDivElement>) {
 
 function CheckoutPartnersInfo() {
   return (
-    <div className="flex items-center justify-between lg:gap-20 gap-10 flex-wrap" id="checkout-partners">
+    <div className="flex items-center justify-between lg:gap-20 gap-10 flex-wrap pt-[80px]" id="checkout-partners">
       <div className="w-full group lg:w-[40%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
         <div className="w-fit relative bg-transparent">
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">
@@ -44,7 +44,7 @@ function CheckoutPartnersInfo() {
 
 function AdvertiserInfo() {
   return (
-    <div className="flex flex-row-reverse items-start justify-between lg:gap-20 gap-10 flex-wrap" id="advertisers">
+    <div className="flex flex-row-reverse items-start justify-between lg:gap-20 gap-10 flex-wrap pt-[80px]" id="advertisers">
       <div className="w-full group lg:w-[40%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
         <div className="w-fit relative bg-transparent">
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">
@@ -78,7 +78,7 @@ function AdvertiserInfo() {
 
 function UsersInfo() {
   return (
-    <div className="flex items-start justify-between lg:gap-20 gap-10 flex-wrap">
+    <div className="flex items-start justify-between lg:gap-20 gap-10 flex-wrap pt-[80px]">
       <div className="w-full group lg:w-[40%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
         <div className="w-fit relative bg-transparent">
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">

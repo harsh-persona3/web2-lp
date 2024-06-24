@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 export default function WinWinWin(props: HTMLAttributes<HTMLDivElement>) {
   const { className, ...rest } = props;
   return (
-    <div className={twMerge(`bg-black rounded-2xl`, className)}>
+    <div className={twMerge(`rounded-2xl`, className)}>
       <div className="px-10 py-5 md:py-10 bg-[#CBC0FF] rounded-2xl flex flex-col gap-10 items-center border 2xl:border-2 border-black translate-y-[-2px]">
         <h1
           className={`bg-[#FFFFFF] text-white font-extrabold inline-block text-transparent bg-clip-text text-3xl min-[480px]:text-4xl min-[600px]:text-5xl md:text-6xl lg:text-7xl xl:text-8xl ${styles.textStroke}`}

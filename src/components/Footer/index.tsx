@@ -19,11 +19,6 @@ export default function Footer(props: FooterProps) {
             <GetInTouchBtn/>
             <ViewDemoBtn />
           </div>
-          <div className="pt-16 lg:pt-36">
-            <hr />
-            <p className="my-4 w-fit mx-auto font-agrandir">© 2024 Persona XYZ, Inc</p>
-          </div>
-
           <div className="hidden lg:block pointer-events-none absolute z-10 -left-[220px] xl:-left-[190px] top-0 xl:-top-6 w-[301px] 2xl:w-[401px]">
             <svg
               width="100%"
