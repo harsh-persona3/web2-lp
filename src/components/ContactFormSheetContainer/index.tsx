@@ -34,7 +34,7 @@ export default function ContactFormSheetContainer(props: PropsWithChildren) {
         } bg-white  duration-500`}
       >
         {() => {
-          return formStep === 0 ? <ContactForm className="p-16 h-screen md:w-[50vw] overflow-auto" onSubmitSuccess={onSubmitSuccess} /> : <SuccessFeedback />;
+          return formStep === 0 ? <ContactForm className="p-10 md:p-16 max-h-screen md:w-[50vw] overflow-auto" onSubmitSuccess={onSubmitSuccess} /> : <SuccessFeedback />;
         }}
       </SheetProvider.Content>
     </SheetProvider>
@@ -60,7 +60,7 @@ const SuccessFeedback = () => {
           </p>
           <div className="flex gap-2">
             <p className="text-3xl md:text-3xl lg:text-4xl font-bold">awesome!</p>
-            <Image className="" src={"/images/heart-bubble.png"} width={40} height={40} alt="thanks" />
+            <Image className="" src={"/images/heart-bubble.png"} width={40} height={40} alt="thanks" priority={true} />
           </div>
         </div>
         <p className="text-3xl md:text-3xl">We&apos;ve received your message and look forward to reaching you out.</p>
