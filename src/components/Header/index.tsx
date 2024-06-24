@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             CHECKOUT PARTNERS
           </p>
         </a>
-        <a href="https://www.persona3.io/#Publishers" target="_blank" className="cursor-none">
+        <a href="https://www.persona3.io/#advertisers" target="_blank" className="cursor-none">
           <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300 ease-out">
             ADVERTISERS
           </p>
@@ -110,11 +110,11 @@ const OverlayMenu: React.FC<OverlayMenuProps> = ({ isOpen, onClose }) => {
         <div className="flex flex-col items-center my-auto text-md gap-8 md:hidden">
           <Image className="" src={"/images/persona.png"} width={120} height={120} sizes="100vw" alt="reward" />
           <a href="https://www.persona3.io/#advertisers" target="_blank" className="cursor-none">
-            <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
+            <p className="hover:bg-gradient-to-r text-center hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
               CHECKOUT PARTNERS
             </p>
           </a>
-          <a href="https://www.persona3.io/#Publishers" target="_blank" className="cursor-none">
+          <a href="https://www.persona3.io/#advertisers" target="_blank" className="cursor-none">
             <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300">
               ADVERTISERS
             </p>

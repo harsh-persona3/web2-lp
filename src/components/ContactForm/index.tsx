@@ -25,6 +25,8 @@ export default function ContactForm(props: ContactFormProps) {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [comments, setComments] = useState("");
+  const [isSubmittingForm, setIsSubmittingForm] = useState(false);
+  const [error, setError] = useState("");
 
   const isItemChecked = (value: string, checkedItems: string[]) => {
     return checkedItems.includes(value);
@@ -32,7 +34,10 @@ export default function ContactForm(props: ContactFormProps) {
 
   const onItemCheckChange = (checkState: boolean, value: string, checkedItems: string[], setCheckedItems: (items: string[]) => void) => {
     if (checkState) {
-      return setCheckedItems(checkedItems.concat(value));
+      return setError(() => {
+        setCheckedItems(checkedItems.concat(value));
+        return "";
+      });
     } else {
       if (checkedItems.includes(value)) return setCheckedItems(checkedItems.filter((item) => item !== value));
     }
@@ -58,8 +63,41 @@ export default function ContactForm(props: ContactFormProps) {
     }
   };
 
-  const handleFormSubmit = (e: FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (checkedItems.length === 0) return setError("Please select your interest area(s)");
+
+    const formDataObj: { [key: string]: any } = {};
+    const formDataEntries = new FormData(e.currentTarget).entries();
+
+    for (const [key, value] of formDataEntries) {
+      formDataObj[key] = value;
+    }
+
+    formDataObj.interests = checkedItems;
+
+    try {
+      setError("");
+      setIsSubmittingForm(true);
+      const response = await fetch("/api/contact", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataObj),
+      });
+
+      if (!response.ok) {
+        throw new Error(`response status: ${response.status}`);
+      }
+      
+    } catch (err) {
+      console.error(err);
+      alert("Error, please try resubmitting the form");
+    } finally {
+      setIsSubmittingForm(false);
+    }
   };
 
   return (
@@ -73,8 +111,9 @@ export default function ContactForm(props: ContactFormProps) {
         </div>
       </div>
 
-      <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
+      <form className={`flex flex-col gap-4 ${isSubmittingForm ? "animate-pulse" : ""}`} onSubmit={handleFormSubmit}>
         <p className="text-xl md:text-2xl lg:text-4xl">Tell us what you&apos;re interested in </p>
+        {error && <p className="text-red-600 font-semibold">{error}</p>}
         <div className="flex gap-2 flex-wrap items-center">
           {items.map((item) => (
             <CheckboxCard
@@ -98,6 +137,7 @@ export default function ContactForm(props: ContactFormProps) {
           value={name}
           onChange={handleInputChange}
           autoComplete="off"
+          disabled={isSubmittingForm}
         />
         <input
           type="email"
@@ -109,6 +149,7 @@ export default function ContactForm(props: ContactFormProps) {
           placeholder="Email"
           value={email}
           onChange={handleInputChange}
+          disabled={isSubmittingForm}
         />
         <input
           type="text"
@@ -120,6 +161,7 @@ export default function ContactForm(props: ContactFormProps) {
           placeholder="Company Website"
           value={website}
           onChange={handleInputChange}
+          disabled={isSubmittingForm}
         />
         <textarea
           className={`px-3 py-2 cursor-none w-full text-black border border-black rounded-lg text-sm md:text-base lg:text-xl ${
@@ -129,13 +171,15 @@ export default function ContactForm(props: ContactFormProps) {
           value={comments}
           name="comments"
           onChange={handleInputChange}
+          disabled={isSubmittingForm}
         />
 
         <button
           type="submit"
+          disabled={isSubmittingForm}
           className="bg-black outline block outline-black hover:scale-105  hover:bg-gradient-to-l from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] hover:text-black transition-all duration-500 ease-out text-white font-bold py-2 px-4 rounded-xl text-base md:text-lg xl:text-xl pointer-events-auto cursor-none"
         >
-          Submit
+          {isSubmittingForm ? "Submitting your details..." : "Submit"}
         </button>
       </form>
     </div>
@@ -174,4 +218,8 @@ const CheckboxCard = (props: CheckBoxProps) => {
       </label>
     </div>
   );
+};
+
+const FormSubmissionFeedback = () => {
+  return <div></div>;
 };
