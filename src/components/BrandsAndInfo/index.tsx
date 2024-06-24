@@ -31,7 +31,7 @@ function CheckoutPartnersInfo() {
         </div>
 
         <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-          Grow lifetime revenue at zero cost through Persona’s checkout flywheel!!!
+          Grow lifetime revenue at zero cost through Persona’s checkout flywheel
         </p>
         <p className="text-lg md:text-xl lg:text-2xl">Subsidize your user’s checkout all sponsored by Persona’s advertising partners.</p>
       </div>
