@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div
       {...rest}
-      className={`fixed top-0 flex justify-between items-center px-10 py-3 z-[99] w-full ${
+      className={`fixed top-0 flex justify-between items-center px-10 py-3 lg:px-[4%] lg:py-8 z-[99] w-full ${
         scrollAtTop ? "bg-white/50 backdrop-blur-md shadow-lg border-b border-white/10 rounded-md md:rounded-b-xl" : ""
       }`}
     >

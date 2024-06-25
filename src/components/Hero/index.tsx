@@ -14,21 +14,21 @@ export default function Hero(props: HeroProps) {
 
   return (
     <div {...rest} className={twMerge("", className)}>
-      <div className={`relative ${isSheetOpen && side === 'right' ? "z-[99]" : "z-20"} mx-auto min-h-[50vw] pt-20`}>
+      <div className={`relative ${isSheetOpen && side === 'right' ? "z-[99]" : "z-20"} mx-auto min-h-[50vw] pt-20 lg:pt-8`}>
         <div className="w-full h-full absolute inset-0 -z-10">
           <AnimatedGrid squareSize={100} gridColor="rgba(0, 0, 0, 0.01)" />
         </div>
         <div className="absolute right-[20%] m-auto w-[20vw] aspect-square rounded-full bg-gradient-to-b from-[#8BFCFF] via-[#8BFCFF] to-[#8BFCFF] blur-[5vw] "></div>
         <div className="absolute left-[15%] top-[50%] m-auto w-[30vw] aspect-square rounded-full bg-gradient-to-b from-[#DFD9FF] via-[#DFD9FF] to-[#FFF3E9] blur-[5vw] "></div>
 
-        <div className="pointer-events-none flex sm:py-20 py-6 relative z-10 flex-wrap-reverse min-h-[50vw] justify-center items-center gap-8 sm:gap-0">
-          <div className="mx-auto w-1/2 flex-grow px-10 flex flex-col gap-8 justify-center sm:items-start items-center">
+        <div className="lg:ml-[4%] pointer-events-none flex sm:py-20 py-6 relative z-10 flex-wrap-reverse min-h-[50vw] justify-center items-center gap-8 sm:gap-0">
+          <div className="lg:pt-16 lg:px-0 w-1/2 flex-grow px-10 flex flex-col gap-8 justify-center sm:items-start items-center">
             <h1 className="text-center sm:text-left font-bold text-4xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl ">
               World&apos;s only sponsored checkout experience
             </h1>
             <BookADemoBtn />
           </div>
-          <div className="w-[80%] sm:w-[50%] aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
+          <div className="w-[80%] sm:w-[50%] lg:-mt-4 aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
             {/* <Image
               className="absolute sm:-top-[13%] sm:-left-[8.5%] -top-[9%] -left-[6%]"
               src={"/images/cart.png"}
