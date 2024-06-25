@@ -45,7 +45,7 @@ function CheckoutPartnersInfo() {
 function AdvertiserInfo() {
   return (
     <div className="flex flex-row-reverse items-start justify-between lg:gap-20 gap-10 flex-wrap pt-[80px]" id="advertisers">
-      <div className="w-full group lg:w-[40%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
+      <div className="w-full group lg:w-[50%] flex flex-col text-left sm:items-start lg:gap-8 gap-4 items-center">
         <div className="w-fit relative bg-transparent">
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">
             <p className="invisible whitespace-nowrap uppercase text-lg md:text-xl lg:text-2xl 2xl:text-4xl font-bold">Advertisers</p>
@@ -61,9 +61,9 @@ function AdvertiserInfo() {
           Pay only for conversions, not impressions. A portion of your payment subsidizes the user&apos;s checkout experience on partner websites and apps.
         </p>
       </div>
-      <div className="w-[50%] lg:w-[50%] mx-auto lg:mx-0">
+      <div className="w-[50%] lg:w-[40%] mx-auto lg:mx-0 flex justify-center">
         <Image
-          className="lg:w-1/2 w-full"
+          className="lg:w-2/3 w-full"
           src={"/images/info2.png"}
           width={0}
           height={0}

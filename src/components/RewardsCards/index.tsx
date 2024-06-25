@@ -48,7 +48,7 @@ export default function RewardsCards(props: HTMLAttributes<HTMLDivElement>) {
         </p>
       </div>
 
-      <div className="grid gap-4 w-full" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr" }}>
+      <div className="grid gap-6 w-full" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr" }}>
         {cardsConfig.map((card, index) => {
           return <RewardCard {...card} key={index} />;
         })}
