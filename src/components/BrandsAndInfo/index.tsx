@@ -83,8 +83,8 @@ function UsersInfo() {
           <div className="relative z-20 py-2 px-4 bg-transparent outline rounded-sm">
             <p className="invisible whitespace-nowrap uppercase text-lg md:text-xl lg:text-2xl 2xl:text-4xl font-bold">For users</p>
           </div>
-          <div className="absolute left-2 top-2 py-2 px-4 bg-[#FFB8FF] transition-all transform group-hover:left-0 group-hover:top-0 rounded-sm">
-            <p className="uppercase whitespace-nowrap text-lg md:text-xl lg:text-2xl 2xl:text-4xl font-bold">For users</p>
+          <div className="absolute left-2 top-2 py-2 px-4 w-full bg-[#FFB8FF] transition-all transform group-hover:left-0 group-hover:top-0 rounded-sm">
+            <p className="uppercase whitespace-nowrap text-lg md:text-xl lg:text-2xl 2xl:text-4xl font-bold">Users</p>
           </div>
         </div>
         <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">Users love us and therefore love you</p>
