@@ -4,10 +4,6 @@ import ViewDemoBtn from "./ViewDemoBtn";
 import GetInTouchBtn from "./GetInTouchBtn";
 import { Inter } from 'next/font/google';
 
-const inter = Inter({
-  weight: '400',
-  subsets: ['latin'],
-})
 
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -18,7 +14,7 @@ export default function Footer(props: FooterProps) {
       <div {...rest}>
         <div className="mx-auto w-[80%] relative">
           <p className="w-[100%] md:w-[100%] lg:w-[90%] 2xl:w-[80%] text-center font-bold text-4xl sm:text-5xl md:text-6xl xl:text-7xl mx-auto">We are changing advertising for the benefit of ALL</p>
-          <p className={`w-[100%] md:w-[100%] lg:w-[90%] 2xl:w-[80%] mt-5 text-center font-normal text-lg sm:text-xl md:text-2xl mx-auto ${inter.className}`}>
+          <p className={`w-[100%] md:w-[100%] lg:w-[90%] 2xl:w-[80%] mt-5 text-center font-normal text-black/70 text-lg sm:text-xl md:text-2xl mx-auto font-inter`}>
             At Persona, we are passionate about helping businesses achieve explosive growth through scalable and innovative financial incentives. Let us show
             you what sets us apart.
           </p>

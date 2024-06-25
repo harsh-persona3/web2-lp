@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: "--font-inter"
+})
+
 
 const proximaNova = localFont({
   src: [
@@ -62,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${proximaNova.variable} ${agrandir.variable} antialiased`}>{children}</body>
+      <body className={`${proximaNova.variable} ${agrandir.variable} ${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }
