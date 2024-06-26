@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 interface BrandsProps extends HTMLAttributes<HTMLDivElement> {}
 
-const images = ["/images/linkedin.png", "/images/alexa.png", "/images/uber.png", "/images/paypal.png", "/images/uber-eats.png", "/images/amazon.png"];
+const images = ["/images/uber-eats.png", "/images/amazon.png",  "/images/paypal.png", "/images/uber.png", "/images/alexa.png","/images/linkedin.png"];
 
 export default function Brands(props: BrandsProps) {
   const { className, ...rest } = props;
