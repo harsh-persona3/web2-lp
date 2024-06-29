@@ -71,7 +71,7 @@ export default function Brands(props: BrandsProps) {
         We are trusted by the best. All the brands that keep customers happy. We create win-win-win scenarios.
       </p>
       {/* <CTA/> */}
-      <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 gap-y-8 sm:gap-y-12 md:grid-cols-6 place-items-center md:w-3/5 md:mx-auto w-full">
+      <div className="grid grid-cols-3 gap-4 gap-y-8 sm:gap-y-12 md:grid-cols-6 place-items-center md:w-3/5 md:mx-auto w-full">
         {images.map((image, index) => {
           return (
             <Image key={index} alt="brand" src={image} className="rounded-xl" width={0} height={0} sizes="100vw" style={{ width: "5vw", minWidth: "40px" }} />
