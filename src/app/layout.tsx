@@ -71,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId='G-PE3YEB5600'/>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_TAG || ""}/>
       <body className={`${proximaNova.variable} ${agrandir.variable} ${inter.variable} antialiased`}>{children}</body>
     </html>
   );
