@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({
   weight: ['400'],
@@ -70,6 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId='G-PE3YEB5600'/>
       <body className={`${proximaNova.variable} ${agrandir.variable} ${inter.variable} antialiased`}>{children}</body>
     </html>
   );
