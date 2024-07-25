@@ -4,6 +4,7 @@ import Cart from "./_components/cart";
 import { offers } from "./constants";
 import Image from "next/image";
 import Offers from "./_components/offers";
+import { Suspense } from "react";
 
 export default function Demo() {
   return (
@@ -14,7 +15,9 @@ export default function Demo() {
           Browse best rewarded ads curated just for you
         </h1>
         <section className="flex items-start justify-between w-full px-24 gap-8 max-w-screen-2xl">
-          <Cart />
+          <Suspense>
+            <Cart />
+          </Suspense>
           <Offers />
         </section>
       </div>
