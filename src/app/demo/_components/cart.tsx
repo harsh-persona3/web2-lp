@@ -1,5 +1,6 @@
 "use client";
-import { useParams, useSearchParams } from "next/navigation";
+import {  useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Cart() {
   const searchParams = useSearchParams();
@@ -10,15 +11,20 @@ export default function Cart() {
     cart = JSON.parse(stringifiedCart);
   }
 
+  useEffect(() => {
+    sessionStorage.setItem("cart", stringifiedCart);
+  }, [stringifiedCart]);
+
   if (!cart?.lines.length) {
     return <></>;
   }
+
   return (
     <div className="bg-white border-2 border-black h-[500px] w-[550px] max-w-[700px] flex flex-col justify-between py-4">
       <div>
         <div className="flex flex-col gap-4 w-full text-2xl font-bold px-6 border-b-2 border-black py-4">
           <span> Your cart details from</span>
-          <span className="text-3xl"> Choco-latte</span>
+          <span className="text-3xl">Choco-latte</span>
         </div>
         <div className="flex flex-col w-full gap-2 px-6 mt-2">
           <span className="text-xl">Items</span>

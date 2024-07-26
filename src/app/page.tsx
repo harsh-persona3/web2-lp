@@ -6,7 +6,6 @@ import Hero from "@/components/Hero";
 import RewardsCards from "@/components/RewardsCards";
 import ContactFormSheetContainer from "@/components/ContactFormSheetContainer";
 import WinWinWin from "@/components/WinWinWin";
-import Cursor from "@/components/ui/CustomCursor";
 
 export default function Home() {
   return (

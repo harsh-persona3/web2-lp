@@ -55,7 +55,7 @@ export default function Offers() {
                   <button
                     className={`bg-white rounded-lg p-3 uppercase font-bold`}
                     style={{
-                      color: item.accent
+                      color: `#${item.accent}`
                     }}
                     onClick={() => onClickOffer(item)}
                   >
