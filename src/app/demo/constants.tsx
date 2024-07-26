@@ -4,7 +4,7 @@ export const offers = [
     logo: "/demo/logos/chime.png",
     label: "Chime",
     bgSrc: "/demo/chime.png",
-    content: "Get your complete order for free by registering for an insurance",
+    content: "Get your complete order for free by creating a account with us",
     offerDetails: {
       discountPercentage: 100,
     },
@@ -24,9 +24,9 @@ export const offers = [
     logo: "/demo/logos/lemonade.png",
     label: "Lemonade",
     bgSrc: "/demo/lemonade.png",
-    content: "Get your 10% flat off by registering for a holiday",
+    content: "Get your complete order for free by registering with a insurance company",
     offerDetails: {
-      discountPercentage: 15,
+      discountPercentage: 100,
     },
   },
   {
@@ -35,9 +35,9 @@ export const offers = [
     label: "Marriot",
     bgSrc: "/demo/marriot.png",
     content:
-      "Get your complete order for free by registering with a insurance company",
+      "Get your 10% flat off by registering for a holiday",
     offerDetails: {
-      discountPercentage: 100,
+      discountPercentage: 10,
     },
   },
 ];
