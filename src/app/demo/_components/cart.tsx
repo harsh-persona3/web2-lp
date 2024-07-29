@@ -20,7 +20,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="bg-white border-2 border-black h-[500px] w-[550px] max-w-[700px] flex flex-col justify-between py-4">
+    <div className="bg-white border-2 border-black h-[500px] w-full md:w-[550px] md:max-w-[700px] flex flex-col justify-between py-4">
       <div>
         <div className="flex flex-col gap-4 w-full text-2xl font-bold px-6 border-b-2 border-black py-4">
           <span> Your cart details from</span>
@@ -35,7 +35,7 @@ export default function Cart() {
                 className="text-lg font-bold flex items-center justify-between"
               >
                 <span>{item.merchandise.product.title}</span>
-                <span>{`$${item.cost.totalAmount.amount}`}</span>
+                <span>{`$${item.cost.totalAmount.amount}0`}</span>
               </div>
             );
           })}
@@ -46,11 +46,11 @@ export default function Cart() {
         <div className="flex flex-col gap-2 pt-2 border-t-2 border-black">
           <div className="flex items-center justify-between">
             <span> Shipping </span>
-            <span> {`$0`} </span>
+            <span> Free </span>
           </div>
           <div className="flex items-center justify-between">
             <span> To be paid </span>
-            <span> ${cart.cost.totalAmount.amount}</span>
+            <span> ${cart.cost.totalAmount.amount}0</span>
           </div>
         </div>
       </div>

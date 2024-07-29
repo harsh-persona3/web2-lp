@@ -28,12 +28,12 @@ export default function Offers() {
             </p>
           </div>
         </div>
-        <div className="h-[550px] w-full grid grid-cols-2 grid-rows-2 gap-6 mt-8">
+        <div className="md:h-[550px] w-full grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-6 mt-8">
           {offers.map((item) => {
             return (
               <div
                 key={item.label}
-                className={`size-full flex flex-col gap-4 items-center justify-center border-2 border-black rounded-xl relative overflow-hidden`}
+                className={`size-full md:py-0 py-4 flex flex-col gap-4 items-center justify-center border-2 border-black rounded-xl relative overflow-hidden`}
               >
                 <div className={styles.gradientOverlay}></div>
                 <Image
