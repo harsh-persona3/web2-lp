@@ -21,8 +21,8 @@ export default function Breakup() {
       ? cartAmount - discountAbsolute
       : cartAmount - (discountPercentage / 100) * cartAmount;
     setPayment({
-      totalAmount: `$${cartAmount.toFixed(1)}`,
-      amountToPay: amountToPay === 0 ? "$0" : `$${amountToPay.toFixed(1)}`,
+      totalAmount: `$${cartAmount.toFixed(1)}0`,
+      amountToPay: amountToPay === 0 ? "$0.00" : `$${amountToPay.toFixed(1)}0`,
       discount: discountAbsolute
         ? `-$${discountAbsolute}`
         : `-${discountPercentage}%`,
@@ -30,7 +30,7 @@ export default function Breakup() {
   }, []);
 
   return (
-    <div className="md:w-3/5 p-6 py-20 pl-[10%]">
+    <div className="md:w-3/5 p-6 py-8 md:py-20 md:pl-[10%]">
       <button
         className="text-md font-semibold text-gray-600 mb-4 flex gap-2 items-center"
         onClick={() => {
