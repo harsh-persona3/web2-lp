@@ -1,10 +1,13 @@
 "use client";
 import CTAButton from "@/components/CTA";
+import { useRouter } from "next/navigation";
 import React from "react";
 
+
 function ViewDemoBtn() {
+  const router = useRouter();
   const onBtnClick = () => {
-    document.getElementById("demo-container")?.scrollIntoView();
+    router.push('https://demo.personapay.ai');
   };
 
   return (

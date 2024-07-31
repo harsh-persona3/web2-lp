@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 
 export default function PaymentDetails() {
   const router = useRouter();
-  const [offer, setOffer] = useState({});
+  const [finalCart, setFinalCart] = useState({});
   useEffect(() => {
     //copy user data to offer obj, cause we'll send that back
     const offer = JSON.parse(sessionStorage.getItem("offer") || "");
     const cart = JSON.parse(sessionStorage.getItem("cart") || "");
-    offer['userData'] = cart['userData']
-    setOffer(offer);
+    cart['offer'] = {...offer};
+    setFinalCart(cart);
   }, []);
 
   return (
@@ -90,7 +90,7 @@ export default function PaymentDetails() {
             router.push(
               `${
                 process.env.NEXT_PUBLIC_PAYMENT_COMPLETE_REDIRECT
-              }offer=${JSON.stringify(offer)}`
+              }cart=${JSON.stringify(finalCart)}`
             );
           }}
         >
