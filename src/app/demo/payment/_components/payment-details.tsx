@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import RedirectingDialog from "./redirect-dialog";
 
 export default function PaymentDetails() {
   const router = useRouter();
@@ -10,9 +11,21 @@ export default function PaymentDetails() {
     //copy user data to offer obj, cause we'll send that back
     const offer = JSON.parse(sessionStorage.getItem("offer") || "");
     const cart = JSON.parse(sessionStorage.getItem("cart") || "");
-    cart['offer'] = {...offer};
+    cart["offer"] = { ...offer };
     setFinalCart(cart);
   }, []);
+
+  const [open, setOpen] = useState(false);
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    setOpen(true);
+    setTimeout(() => {
+      router.push(
+        `${process.env.NEXT_PUBLIC_PAYMENT_COMPLETE_REDIRECT}cart=${JSON.stringify(finalCart)}`
+      );
+    }, 1500);
+  };
 
   return (
     <div className="md:w-2/5 bg-white px-4 py-8 md:px-24 md:py-24 shadow-xl drop-shadow-xl">
@@ -86,17 +99,18 @@ export default function PaymentDetails() {
         <button
           type="submit"
           className="w-full bg-red-500 text-white py-3 rounded-lg"
-          onClick={() => {
-            router.push(
-              `${
-                process.env.NEXT_PUBLIC_PAYMENT_COMPLETE_REDIRECT
-              }cart=${JSON.stringify(finalCart)}`
-            );
-          }}
+          onClick={handleSubmit}
         >
           Proceed
         </button>
       </form>
+      <RedirectingDialog
+        open={open}
+        setOpen={setOpen}
+        redirectUrl={`${
+          process.env.NEXT_PUBLIC_PAYMENT_COMPLETE_REDIRECT
+        }cart=${JSON.stringify(finalCart)}`}
+      />
     </div>
   );
 }
