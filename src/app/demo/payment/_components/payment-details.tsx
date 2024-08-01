@@ -9,10 +9,14 @@ export default function PaymentDetails() {
   const [finalCart, setFinalCart] = useState({});
   useEffect(() => {
     //copy user data to offer obj, cause we'll send that back
-    const offer = JSON.parse(sessionStorage.getItem("offer") || "");
-    const cart = JSON.parse(sessionStorage.getItem("cart") || "");
-    cart["offer"] = { ...offer };
-    setFinalCart(cart);
+    const stringifiedOffer = sessionStorage.getItem("offer") || "";
+    const stringifiedCart = sessionStorage.getItem("cart") || "";
+    if (stringifiedCart.length && stringifiedOffer.length) {
+      const cart = JSON.parse(stringifiedCart);
+      const offer = JSON.parse(stringifiedOffer);
+      cart["offer"] = { ...offer };
+      setFinalCart(cart);
+    }
   }, []);
 
   const [open, setOpen] = useState(false);
@@ -22,7 +26,9 @@ export default function PaymentDetails() {
     setOpen(true);
     setTimeout(() => {
       router.push(
-        `${process.env.NEXT_PUBLIC_PAYMENT_COMPLETE_REDIRECT}cart=${JSON.stringify(finalCart)}`
+        `${
+          process.env.NEXT_PUBLIC_PAYMENT_COMPLETE_REDIRECT
+        }cart=${JSON.stringify(finalCart)}`
       );
     }, 1500);
   };

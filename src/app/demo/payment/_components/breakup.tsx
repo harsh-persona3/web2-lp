@@ -13,20 +13,25 @@ export default function Breakup() {
   const router = useRouter();
 
   useEffect(() => {
-    const cart = JSON.parse(sessionStorage.getItem("cart") || "");
-    const offer = JSON.parse(sessionStorage.getItem("offer") || "");
-    const cartAmount = Number(cart.cost.totalAmount.amount) || 50;
-    const { discountAbsolute, discountPercentage } = offer?.offerDetails;
-    const amountToPay = discountAbsolute
-      ? cartAmount - discountAbsolute
-      : cartAmount - (discountPercentage / 100) * cartAmount;
-    setPayment({
-      totalAmount: `$${cartAmount.toFixed(1)}0`,
-      amountToPay: amountToPay === 0 ? "$0.00" : `$${amountToPay.toFixed(1)}0`,
-      discount: discountAbsolute
-        ? `-$${discountAbsolute}`
-        : `-${discountPercentage}%`,
-    });
+    const stringifiedOffer = sessionStorage.getItem("offer") || "";
+    const stringifiedCart = sessionStorage.getItem("cart") || "";
+    if (stringifiedCart.length && stringifiedOffer.length) {
+      const cart = JSON.parse(stringifiedCart);
+      const offer = JSON.parse(stringifiedOffer);
+      const cartAmount = Number(cart.cost.totalAmount.amount) || 50;
+      const { discountAbsolute, discountPercentage } = offer?.offerDetails;
+      const amountToPay = discountAbsolute
+        ? cartAmount - discountAbsolute
+        : cartAmount - (discountPercentage / 100) * cartAmount;
+      setPayment({
+        totalAmount: `$${cartAmount.toFixed(1)}0`,
+        amountToPay:
+          amountToPay === 0 ? "$0.00" : `$${amountToPay.toFixed(1)}0`,
+        discount: discountAbsolute
+          ? `-$${discountAbsolute}`
+          : `-${discountPercentage}%`,
+      });
+    }
   }, []);
 
   return (
@@ -47,7 +52,7 @@ export default function Breakup() {
       </button>
       <h2 className="text-lg mb-6">Pay Persona</h2>
       <div className="mb-4 flex flex-col gap-6 w-full">
-        <div className="text-5xl font-bold">{payment?.amountToPay || '-'}</div>
+        <div className="text-5xl font-bold">{payment?.amountToPay || "-"}</div>
         <div className="text-gray-600 flex w-full justify-between border-b font-semibold pb-1">
           <div>Total Cart Value</div>
           <div className="text-xl">{payment?.totalAmount || "-"}</div>
