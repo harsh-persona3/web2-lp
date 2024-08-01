@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import BookADemoBtn from "./BookADemoBtn";
 import { SheetContext } from "../ui/Sheet";
+import Link from "next/link";
 
 interface HeroProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -14,7 +15,11 @@ export default function Hero(props: HeroProps) {
 
   return (
     <div {...rest} className={twMerge("", className)}>
-      <div className={`relative ${isSheetOpen && side === 'right' ? "z-[99]" : "z-20"} mx-auto min-h-[50vw] pt-20 lg:pt-8`}>
+      <div
+        className={`relative ${
+          isSheetOpen && side === "right" ? "z-[99]" : "z-20"
+        } mx-auto min-h-[50vw] pt-20 lg:pt-8`}
+      >
         <div className="w-full h-full absolute inset-0 -z-10">
           <AnimatedGrid squareSize={100} gridColor="rgba(0, 0, 0, 0.01)" />
         </div>
@@ -26,7 +31,14 @@ export default function Hero(props: HeroProps) {
             <h1 className="text-center sm:text-left font-bold text-4xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl ">
               World&apos;s only sponsored checkout experience
             </h1>
-            <BookADemoBtn />
+            <div className="flex gap-8 items-center">
+              <BookADemoBtn />
+              <Link href="https://demo.personapay.ai" className="pointer-events-auto">
+                <p className="hover:bg-gradient-to-r text-xl font-bold hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300 ease-out">
+                  VIEW DEMO
+                </p>
+              </Link>
+            </div>
           </div>
           <div className="w-[80%] sm:w-[50%] lg:-mt-4 aspect-[842/577] border border-black rounded-2xl relative sm:left-[1%] backdrop-blur-sm bg-white/50">
             {/* <Image
@@ -38,9 +50,15 @@ export default function Hero(props: HeroProps) {
               style={{ width: "10vw" }}
               alt="cart"
             /> */}
-            <video autoPlay muted playsInline className="rounded-2xl w-full" loop>
-            <source src="/videos/demo.webm" type="video/webm"/>
-              <source src="/videos/demo.mp4" type="video/mp4"/>
+            <video
+              autoPlay
+              muted
+              playsInline
+              className="rounded-2xl w-full"
+              loop
+            >
+              <source src="/videos/demo.webm" type="video/webm" />
+              <source src="/videos/demo.mp4" type="video/mp4" />
             </video>
             {/* <div className="absolute inset-0 overflow-hidden rounded-2xl">
               <div className="w-full bg-[#D8D8D8] opacity-60 absolute top-[5%] py-1 -z-10">

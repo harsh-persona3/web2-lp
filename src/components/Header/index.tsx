@@ -63,11 +63,6 @@ const Header: React.FC<HeaderProps> = (props) => {
             ADVERTISERS
           </p>
         </a>
-        <Link href="https://demo.personapay.ai" className="">
-          <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300 ease-out">
-            VIEW DEMO
-          </p>
-        </Link>
         <SheetProvider.Trigger>
           {({ openSheet }) => {
             return (
@@ -151,12 +146,6 @@ const OverlayMenu: React.FC<OverlayMenuProps> = ({ isOpen, onClose }) => {
               ADVERTISERS
             </p>
           </a>
-          <Link href="https://demo.personapay.ai" className="">
-            <p className="hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 hover:text-transparent hover:bg-clip-text hover:scale-105 hover:font-semibold transition duration-300 ease-out">
-              VIEW DEMO
-            </p>
-          </Link>
-
           <SheetProvider.Trigger>
             {({ openSheet }) => {
               return (
