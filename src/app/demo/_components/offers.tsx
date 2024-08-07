@@ -5,10 +5,15 @@ import { offers } from "../constants";
 import styles from "./styles.module.css";
 import OfferModal from "./offer-modal";
 import { useState } from "react";
-
+interface PartnerData {
+  label: string;
+  logo: string;
+  bgSrc: string;
+  content: string;
+}
 export default function Offers() {
   const [open, setOpen] = useState(false);
-  const [selectedPartner, setSelectedPartner] = useState({});
+  const [selectedPartner, setSelectedPartner] = useState<PartnerData>({} as PartnerData);
   const onClickOffer = (partnerData: any) => {
     setSelectedPartner({ ...partnerData });
     setOpen(true);
