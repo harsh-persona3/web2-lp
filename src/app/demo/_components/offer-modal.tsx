@@ -62,14 +62,20 @@ const OfferModal: React.FC<OfferModalProps> = ({
   };
 
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
+    <Dialog.Root
+      open={open}
+      onOpenChange={(newVal) => {
+        setOpen(newVal);
+        setErrors({});
+      }}
+    >
       <Dialog.Portal>
         <Dialog.Overlay className={styles.DialogOverlay} />
         <Dialog.Content className={styles.DialogContent}>
           <Dialog.Title className={styles.DialogTitle}>
             Sign Up for {partnerData.label}
           </Dialog.Title>
-          <div className="border rounded-md flex flex-col items-center gap-4 pb-8 overflow-hidden">
+          <div className="border rounded-md flex flex-col items-center gap-2 pb-8 overflow-hidden">
             <div className="bg-fuchsia-300 h-[200px] w-full relative rounded-md flex items-center justify-center">
               <Image
                 src={partnerData.logo}
@@ -91,29 +97,34 @@ const OfferModal: React.FC<OfferModalProps> = ({
             <Dialog.Description className={styles.DialogDescription}>
               {partnerData.content}
             </Dialog.Description>
-            <fieldset className={styles.Fieldset}>
-              <input
-                className={`${styles.Input} ${
-                  errors.name ? "!border-2 !border-red-400" : ""
-                }`}
-                id="name"
-                placeholder="Name"
-                value={formValues.name}
-                onChange={handleInputChange}
-              />
-            </fieldset>
-            <fieldset className={styles.Fieldset}>
-              <input
-                className={`${styles.Input} ${
-                  errors.email ? "!border-2 !border-red-400" : ""
-                }`}
-                id="email"
-                placeholder="Email"
-                value={formValues.email}
-                onChange={handleInputChange}
-              />
-            </fieldset>
-            <button onClick={onClickSignUp} className={styles.Button}>
+            <div className="flex flex-col">
+              <fieldset className={styles.Fieldset}>
+                <input
+                  className={`${styles.Input} ${
+                    errors.name ? "!border-2 !border-red-400" : ""
+                  }`}
+                  id="name"
+                  placeholder="Name"
+                  value={formValues.name}
+                  onChange={handleInputChange}
+                />
+                {errors.name && <p>Please enter your name</p>}
+              </fieldset>
+              <fieldset className={styles.Fieldset}>
+                <input
+                  className={`${styles.Input} ${
+                    errors.email ? "!border-2 !border-red-400" : ""
+                  }`}
+                  id="email"
+                  placeholder="Email"
+                  value={formValues.email}
+                  onChange={handleInputChange}
+                />
+                {errors.email && <p>Please enter a valid email address</p>}
+              </fieldset>
+            </div>
+
+            <button onClick={onClickSignUp} className={`${styles.Button}`}>
               Sign Up
             </button>
           </div>
