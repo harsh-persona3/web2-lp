@@ -117,7 +117,7 @@ export default function PaymentDetails() {
   };
 
   return (
-    <div className="md:w-2/5 bg-white px-4 py-8 md:px-24 md:py-24 shadow-xl drop-shadow-xl">
+    <div className="md:w-2/5 bg-white px-4 py-8 md:px-20 md:pt-24 pb-12 shadow-xl drop-shadow-xl">
       <div className="bg-black text-white text-center py-3 rounded-lg mb-4 cursor-pointer">
         Apple Pay
       </div>
