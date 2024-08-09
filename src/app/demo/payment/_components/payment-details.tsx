@@ -63,6 +63,39 @@ export default function PaymentDetails() {
           ...prevData,
           [name]: value,
         }));
+    } else if (name === "cvc") {
+      if (value.length <= 3)
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+    } else if (name === "expiry") {
+      let newValue = value;
+
+      // Remove any non-digit characters except "/"
+      newValue = newValue.replace(/[^0-9\/]/g, "");
+
+      // Insert slash with spaces if needed
+      if (newValue.includes("/")) {
+        // Split by slash
+        const parts = newValue.split("/");
+
+        // Ensure proper spacing around the slash and limit parts to 2 digits
+        newValue =
+          (parts[0] || "").slice(0, 2) + " / " + (parts[1] || "").slice(0, 2);
+      } else {
+        // Insert slash after 2 digits and add spaces
+        if (newValue.length > 2) {
+          newValue = newValue.slice(0, 2) + " / " + newValue.slice(2);
+        }
+      }
+
+      // Ensure that no extra spaces or characters are present
+      newValue = newValue.replace(/ +/g, " ").trim();
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: newValue,
+      }));
     } else {
       setFormData((prevData) => ({
         ...prevData,
@@ -92,7 +125,7 @@ export default function PaymentDetails() {
     if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(formData.cardNumber))
       newErrors.cardNumber =
         "Invalid card number, please enter your 16 digit card number";
-    if (!/^\d{2}\/\d{2}$/.test(formData.expiry))
+    if (!/^\d{2} \/ \d{2}$/.test(formData.expiry))
       newErrors.expiry = "Invalid expiry date";
     if (!/^\d{3,4}$/.test(formData.cvc)) newErrors.cvc = "Invalid CVC";
     if (!formData.nameOnCard.trim())
