@@ -62,6 +62,9 @@ const agrandir = localFont({
 export const metadata: Metadata = {
   title: "Persona",
   description: "World's only sponsored checkout experience",
+  other: {
+    'impact-site-verification': 'ad4a8a36-c3ac-4fa4-9862-5321636d41c8',
+  },
 };
 
 export default function RootLayout({
