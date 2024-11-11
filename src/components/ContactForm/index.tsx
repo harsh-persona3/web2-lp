@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, HTMLAttributes, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon } from "@radix-ui/react-icons";
+import { useSearchParams } from "next/navigation";
 
 const items = [
   {
@@ -22,7 +23,7 @@ interface ContactFormProps extends HTMLAttributes<HTMLDivElement> {
 export default function ContactForm(props: ContactFormProps) {
   const { className, onSubmitSuccess, ...rest } = props;
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
-
+  const searchParams = useSearchParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -88,6 +89,17 @@ export default function ContactForm(props: ContactFormProps) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formDataObj),
+      });
+
+
+      await fetch("/api/conversion", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sessionId : searchParams.get('sessionId')
+        }),
       });
 
       if (!response.ok) {
