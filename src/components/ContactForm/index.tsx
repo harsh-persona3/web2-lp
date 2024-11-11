@@ -92,7 +92,7 @@ export default function ContactForm(props: ContactFormProps) {
       });
 
 
-      await fetch("/api/conversion", {
+      fetch("/api/conversion", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
