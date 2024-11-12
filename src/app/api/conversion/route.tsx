@@ -3,13 +3,13 @@ import { NextResponse, NextRequest } from "next/server";
 export async function POST(request: NextRequest) {
   const formData = await request.json();
   const payload = {
-    eventId: "c4a792cd-b389-44d8-bc02-419162c45864",
+    eventId: "857e4a06-ddce-4533-9eae-b41e9226f8b5",
     sessionId: formData["sessionId"],
     triggeredAt: Date.now(),
   };
   try {
     const response = await fetch(
-      `https://dev.personapay.tech/advertisers/campaign/conversion/coupon-webhook`,
+      `https://staging.personapay.tech/advertisers/campaign/conversion/coupon-webhook`,
       {
         body: JSON.stringify(payload),
         headers: {
